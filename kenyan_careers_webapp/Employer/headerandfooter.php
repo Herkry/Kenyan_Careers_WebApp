@@ -1,7 +1,8 @@
 <?php
-    //header display function
+    
     class HeaderandFooter
     {
+        //header display function
         function headerdisplay()
         {
                 ?>
@@ -28,18 +29,14 @@
                     <div class="container">
                         <div class="navbar-header">
                         <a class="navbar-brand" href="#">
-                            <img src="http://placehold.it/150x50?text=Logo" alt="">
+                            <img height="115" width="110" src="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/Images/kenyacareer_logo_header.png" alt="kenyacareer_logo">
                             </a>
-                        </div>
+                    </div>
 
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                         </button>
-                        <form class="form-inline">
-                        <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
-                            aria-label="Search">
-                        <i class="fas fa-search" aria-hidden="true"></i>
-                        </form>
+                    
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
@@ -64,45 +61,46 @@
                 </html>
         <?php
         }
+        //This is a function for the footer
         function footerdisplay()
         {
             ?>
                <html>
                     <head>
                     <meta name="viewport" content="width=device-width, initial-scale=1">
-                    <style>
-                    /**Definition of the html class footer */
-                    .footer 
-                    {
-                        position: fixed;
-                        left: 0;
-                        bottom: 0;
-                        width: 100%;
-                        background-color:black;
-                        color: white;
-                        text-align: center;
-                    }
-                    </style>
+                        <style>
+                        /**Definition of the html class footer */
+                        .footer 
+                        {
+                            position: fixed;
+                            left: 0;
+                            bottom: 0;
+                            width: 100%;
+                            background-color:#212529;
+                            color: yellow;
+                            text-align: center;
+                        }
+                        </style>
                     </head>
+
                     <body>
-                    <div class="footer">
-                    <p>
-                        <img src="#" class="img-responsive" alt="kenyacareer_large_logo">
 
-                        <!-- <div class="list-group">
-                            <div class="list-group-item list-group-item-action flex-column align-items-start">
-                                <div class="d-flex w-100 justify-content-between">
-                                    <h5 class="mb-1"> <a href="">KenyaCareer</a></h5>
-                                    <small>small</small>
-                                </div>
-                                <p class="mb-1">Services</p>
-                                <small>paragraph footer</small>
-                            </div>
-                        </div> -->
-                    </p>
-                    </div>
+                        <div class="footer">
+                        <p>
+                        <img height="90" width="90" class="img-responsive" src="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/Images/kenyacareer_logo_custom.png" alt="kenyacareer_logo">
+                        </p>
+                        <!--Display of the social media icons-->
+                        <p>
+                            
+                        </p>
+                        <!--Display of services-->
+                        <p>
 
+                        </p>
+
+                        </div>
                     </body>
+
                 </html> 
                         <?php
         }
