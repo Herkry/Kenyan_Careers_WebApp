@@ -1,0 +1,31 @@
+body {
+    font-family: sans-serif;
+  }
+  .site-header 
+  {
+    background: rgb(255, 255, 255);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    border-style: solid;
+    border-color: rgb(255, 0, 0);
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  #headerf
+  {
+    align-self: center;
+    color: black;
+    margin-left: 530px;
+    text-align: center;
+    margin-right: 2em;
+  }
+  .footer 
+  {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: blue;
+    text-align: center;
+  }
