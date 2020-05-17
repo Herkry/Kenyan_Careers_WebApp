@@ -6,20 +6,22 @@ body {
     background: rgb(255, 255, 255);
     color: white;
     display: flex;
+    justify-content: center;
     flex-direction: row;
     border-style: solid;
-    border-color: rgb(255, 0, 0);
+    border-color: rgb(202, 234, 238);
     align-items: center;
     flex-wrap: wrap;
-  }
-  #headerf
-  {
-    align-self: center;
-    color: black;
-    margin-left: 530px;
     text-align: center;
-    margin-right: 2em;
   }
+  .container
+  {
+    display: flex;
+    flex-direction: row;
+    flex-direction: row-reverse;
+    background-color: blue;
+  }
+
   .footer 
   {
     position: fixed;
@@ -28,4 +30,9 @@ body {
     width: 100%;
     color: blue;
     text-align: center;
+  }
+  #navid
+  {
+    display: flex;
+    justify-content:center;
   }

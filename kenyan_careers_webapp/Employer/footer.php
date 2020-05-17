@@ -7,7 +7,7 @@ class Footer
         <html>
         <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/CSS/header.css">
+        <link rel="stylesheet" href="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/CSS/employer_header_footer.css">
         </head>
 
         <body>
@@ -22,7 +22,8 @@ class Footer
 
         <?php
     }
-
 }
+
+
 
 ?>
