@@ -8,13 +8,15 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" >
   
   <!-- MDB -->
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="/Assets/mdb/css/bootstrap.min.css">
   <!-- Material Design Bootstrap -->
   <link rel="stylesheet" href="/Assets/mdb/css/mdb.min.css">
   <!-- Your custom styles (optional) -->
 
-  <title>Application Details</title>
+  <title>Qualifications</title>
   <style>
       .yellow{
         background-color: yellow;
@@ -28,9 +30,6 @@
       .orange{
         background-color:orange;  
       }
-      .btn-next-bcg{
-        background-color:#00a8ff;
-      }
       .blue-flatui{
         background-color:#00a8ff;
       }
@@ -43,31 +42,27 @@
       .height-140{
           height:140px;
       }
-      .height-170{
-          height:170px;
+      .height-120{
+          height:120px;
+      }
+      .height-200{
+          height:200px;
       }
       .text-center-align{
           text-align:center;
       }
       .height-80{
-        height:150px;
-      }
-      .width-80{
         height:80px;
       }
+      .width-80{
+        width:80px;
+      }
+      .width-18rem{
+        width:18rem;
+      }
+
       .neg-margin-top{
           margin-top:-40px;
-      }
-      .purple-border textarea {
-         border: 1px solid #ba68c8;
-      }
-      .purple-border .form-control:focus {
-         border: 1px solid #ba68c8;
-         box-shadow: 0 0 0 0.2rem rgba(186, 104, 200, .25);
-      }
-      .green-border-focus .form-control:focus {
-         border: 1px solid #8bc34a;
-         box-shadow: 0 0 0 0.2rem rgba(139, 195, 74, .25);
       }
 
   </style>
@@ -130,76 +125,63 @@
         </div>
     </div>
 
-    <div class="container-fluid green vh-100">
+    <div class="container-fluid green">
 
-        <form action="applicationDetailsProcess.php" method="post" id="appDits" enctype="multipart/form-data">
+        <form action="" method="post">
             <div class="row rounded d-flex justify-content-center mb-4 orange height-75 ">
                 <div class="col-sm-7 col-md-17 col-lg-7 rounded blue text-center-align neg-margin-top">
-                    <h2>Personal Details</h2>
-                    <p align="left">Please enter your personal information below. 
-                    This will be used to evaluate your application.</p>
+                    <h2>Qualifications</h2>
+                    <p align="left">You will be required to enter details of any formal certifcaitons you might have undertaken. This information will be used to evaluate your application.</p>
                 </div>
             </div>
-            <div class="row rounded d-flex justify-content-center mb-4 orange height-170">
-                <div class="col-sm-7 col-md-17 col-lg-7 blue pt-4">
-                    <h2>Upload Curriculum Vitae</h2>
-                    <input  type="file" id="myFile" name="fileToUpload"><br>
-                    <a onclick="dataLossWarning()" class="btn btn-primary mt-3" href="#" role="button">Use CV Builder</a>
+            <div class="row rounded d-flex justify-content-center mb-4 orange height-120">
+                <div class="col-sm-7 col-md-17 col-lg-7 text-center pt-4 blue ">
+                    <h3>You currently have not added any qualifications</h3>
                 </div>
-            </div>
-            <div class="row rounded d-flex justify-content-center mb-4  orange height-170">
-                <div class="col-sm-7 col-md-17 col-lg-7 blue pt-4 ">
-                    <h2>How did you know of this opportunity</h2>
-                    <div class="md-form mb-4 pink-textarea active-pink-textarea">
-                        <textarea name="knowOpportunity" form="appDits" id="form18" class="md-textarea form-control" rows="3"></textarea>
-                    </div>
-                </div>
-            </div>
-            <div class="row rounded d-flex justify-content-center mb-4 orange height-170">
-                <div class="col-sm-7 col-md-17 col-lg-7 blue pt-4">
-                    <h2>What are your expectations</h2>
-                    <div class="form-group shadow-textarea">
-                        <textarea name="expectations" form="appDits" class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Your Answer..."></textarea>
-                    </div>
-                </div>
-            </div>
-            <div class="row rounded d-flex justify-content-center mb-4 orange height-170">
-                <div class="col-sm-7 col-md-17 col-lg-7 blue pt-4">
-                    <h2>What are your strengths</h2>
-                    <div class="form-group shadow-textarea">
-                        <textarea name="strengths" form="appDits" class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Your Answer..."></textarea>
-                    </div>
-                </div>
-            </div>
-            <div class="row rounded d-flex justify-content-center mb-4 orange height-170">
-                <div class="col-sm-7 col-md-17 col-lg-7 blue pt-4">
-                    <h2>What are your weaknesses</h2>
-                    <div class="form-group shadow-textarea">
-                        <textarea name="weaknesses" form="appDits" class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Your Answer..."></textarea>
-                    </div>
-                </div>
-            </div>
-            <div class="row rounded d-flex justify-content-center mb-4 orange">
-                <div class="col-sm-7 col-md-17 col-lg-7 pt-4 pb-4 text-center blue">
-                <input class="btn-lg btn-primary" type="submit" value="Next">
             </div>
 
-        </div>
-
+            <div class="row rounded d-flex justify-content-center mb-4 orange height-120">
+                <div class="col-sm-7 col-md-17 col-lg-7 text-center pt-4 blue">
+                    <i class="fas fa-plus"></i>
+                    <input class="btn-lg btn-primary" type="submit" value="Add Qualification">
+                </div>
+            </div>
+            <div class="row rounded d-flex justify-content-center mb-4 orange height-200">
+                <div class="card-deck">
+                  <div class="card width-18rem">
+                    <div class="card-header">
+                        Qualification
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">University of Nairobi</li>
+                        <li class="list-group-item">Bsc in Computer Science</li>
+                        <li class="list-group-item">4 years</li>
+                    </ul>
+                  </div>
+                  <div class="card width-18rem">
+                    <div class="card-header">
+                        Qualification
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">University of Nairobi</li>
+                        <li class="list-group-item">Bsc in Computer Science</li>
+                        <li class="list-group-item">4 years</li>
+                    </ul>
+                  </div>
+                  <div class="card width-18rem">
+                    <div class="card-header">
+                        Qualification
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">University of Nairobi</li>
+                        <li class="list-group-item">Bsc in Computer Science</li>
+                        <li class="list-group-item">4 years</li>
+                    </ul>
+                  </div>
+                </div>
+            </div>
         </form>
-    </div>
-    
-  <!-- Warning of data loss when onClick CV Builder button-->
-  <script>
-      function dataLossWarning(){
-          if(confirm("Any data you previously entered might be lost. Do you want to continue")){
-              //do nothing
-        }
-          else{
-              //add code to lead to cv builder page.
-          }
-      }
-  </script>
+    </div>  
     
   <!--MDB  -->
   <!-- jQuery -->
