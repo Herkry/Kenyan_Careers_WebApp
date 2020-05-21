@@ -84,7 +84,7 @@ class Header
 
         <body>
             <!--Using flex for the header design 
-            Check file: header.css 
+            Check file: employer_header_footer.css 
             -->   
         <header class="site-header">
         <a href="#"><img height="90" width="260" src="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/Images/kenyacareer_vectorcopy.png" alt="kenyan_career_logo"></a>
@@ -138,7 +138,4 @@ class Header
     }
 
 }
-    $headr = new Header;
-    $headr->plain_header_display();
-    
 ?>

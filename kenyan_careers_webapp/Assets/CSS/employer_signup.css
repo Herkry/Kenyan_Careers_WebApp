@@ -1,0 +1,29 @@
+.container
+{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-self: center;
+    color: white;
+    background-color:white;
+}
+#header
+{
+    border: white;
+    border-style: solid;
+    background-color:black;
+    text-align: center;
+    font-size: 10px;
+    font-style: italic;
+}
+.imageupload
+{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+}
+#myfile
+{
+    margin-top: 5px;
+    text-align: center;
+}
