@@ -2,10 +2,13 @@
 
 //Requiring the header from the header.php file
  require_once('header.php');
+ require_once('footer.php');
 
  $headr = new Header();
  $headr->plain_header_display();
 
+  $footr = new Footer();
+  $footr->display_social_footer();
 
 ?>
 
@@ -14,7 +17,7 @@
  <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/CSS/employer_signup.css">
 
  </head>
@@ -26,12 +29,39 @@
         <form action="" method="post"> 
 
          <div class="row">
+
                 <div class="col-sm-4">
                     <div class="imageupload">
-                    <img src="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/Images/placeholder_img.png" class="rounded float-left" height="160" width="160" alt="Image_input">
+                    <!-- <img src="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/Images/logo-placeholder-png.png" class="rounded float-left" height="160" width="160" alt="Image_input"> -->
                     <form action="#" method="post">
-                    <input type="file" id="myfile" name="myfile"><br><br>
+                    <!-- <input type="file" id="myfile" name="myfile"><br><br> -->
+                   
+                     <a href="#change"><img id="logo" width = "200px" src="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/Images/logo-placeholder-png.png" alt="yourlogo" /></a>
+                     <input id="change" type='file' onchange="readURL(this);" />
+                    
+                        <script>
+                        function readURL(input) 
+                        {
+                            if (input.files && input.files[0]) 
+                            {
+                            var reader = new FileReader();
+
+                            reader.onload = function (e) 
+                            {
+                                $('#logo')
+                                    .attr('src', e.target.result)
+                                    .width(200);
+                            };
+
+                            reader.readAsDataURL(input.files[0]);
+                            }
+                    }
+                        </script>
+
                     </form>
+
+                    <br><br><br>
+                    
                     <!--drop down menu for industry category-->
                        <select>  
                         <option value="Conglomerate">Conglomerate</option>}  
@@ -54,7 +84,7 @@
                    </div>
 
                 </div>
-                <div class="col-sm-4">
+
                     <div class="form-group">
                         
                       <input type="text" name="" id="nameoforg" class="form-control" placeholder="Input Name" aria-describedby="helpId">
@@ -63,14 +93,8 @@
                       <input type="number" name="" id="phonenumber" class="form-control" placeholder="Input Phone Number" aria-describedby="helpId"><br>
                       <input type="text" name="" id="location" class="form-control" placeholder="Input Location" aria-describedby="helpId"><br>
                       <input type="text" name="" id="address" class="form-control" placeholder="Input Address" aria-describedby="helpId"><br>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="form-group">
-                        <textarea name="mission" id="missionstatement" cols="30" rows="5" placeholder="Input the Mission of your Company"></textarea> <br>
-                        <small id="helpId" class="text-muted">This information will be important to Applicants!</small>
-                    </div>
+                      <input type="url" name="" placeholder = "Company Website" id="">
+                    
                 </div>
 
             </div>

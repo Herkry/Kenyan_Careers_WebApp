@@ -1,20 +1,28 @@
+body
+{
+    background-image: url(/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/Images/matte4k.jpg);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+}
+
 .container
 {
     display: flex;
     flex-direction: column;
     align-content: center;
     align-self: center;
-    color: white;
-    background-color:white;
+    color: rgb(17, 46, 107);
+    background-color:rgb(255, 255, 255);
+    margin-top: 100px;
+    
 }
 #header
 {
-    border: white;
-    border-style: solid;
-    background-color:black;
+    /* border: white;
+    border-style: solid; */
     text-align: center;
-    font-size: 10px;
-    font-style: italic;
+    font-size: 2px;
 }
 .imageupload
 {
@@ -26,4 +34,8 @@
 {
     margin-top: 5px;
     text-align: center;
+}
+#logo
+{
+    border-radius: 50%;
 }
