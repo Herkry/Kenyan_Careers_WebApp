@@ -1,5 +1,6 @@
 <?php
-	function connect(){
+	function connect()
+	{
 		$dbserver = "localhost";
 		$username = "root";
 		$password = "";
@@ -10,7 +11,8 @@
 		return $link;
 	}
 	
-	function setData($sql){
+	function setData($sql)
+	{
 		$link = connect();
 		if(mysqli_query($link,$sql)){
 			return true;
@@ -23,7 +25,8 @@
 		}
 	}
 
-	function getData($sql){
+	function getData($sql)
+	{
 		$link = connect();
 		$result = mysqli_query($link,$sql);
 		$rowData = array();
