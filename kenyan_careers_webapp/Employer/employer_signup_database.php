@@ -40,11 +40,11 @@
         $verificationkey = generateRandomString();
         $password_string = mysqli_real_escape_string($conn,$password);
         $passHash = password_hash($password_string, PASSWORD_DEFAULT);
-        $sql = "INSERT INTO employer_details(emp_logo,emp_category, emp_name, emp_email, emp_phone, emp_location, emp_address, emp_url, emp_password, emp_verification) values ('$logo','$category','$name','$email','$phone','$location','$address','$url','$password','$verificationkey')";
+        $sql = "INSERT INTO employer_details(emp_logo,emp_category, emp_name, emp_email, emp_phone, emp_location, emp_address, emp_url, emp_password, emp_verification) values ('$logo','$category','$name','$email','$phone','$location','$address','$url','$passHash','$verificationkey')";
 
         if ($conn->query($sql) === TRUE)
                 {
-                   require_once('/Kenyan_Careers_WebApp/kenyan_careers_webapp/Employer/phpmailer/PHPMailerAutoload.php');
+                   require_once('phpmailer/PHPMailerAutoload.php');
                    //send email to client
                    $mail = new PHPMailer();
                    $mail->isSMTP();
