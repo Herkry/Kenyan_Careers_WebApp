@@ -31,9 +31,31 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Varela+Round">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
+    #status {
+      font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    #status td, #status th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    #status tr:nth-child(even){background-color: #f2f2f2;}
+
+    #status tr:hover {background-color: #ddd;}
+
+    #status th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #2E86C1;
+      color: white;
+    }
    .jumbotron {
   
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)); 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)); 
     /* padding-top: 33%; 
     padding-bottom: 10%; */
     /* background-size: cover; */
@@ -84,7 +106,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 
 <div class="jumbotron text-center">
-  <h1 style="border-radius: 25px; color: white; text-transform: uppercase;">Apply Now</h1> 
+  <h1 style="border-radius: 25px; color: black; text-transform: uppercase;">Job Description</h1> 
 </div>
 
 
@@ -95,15 +117,64 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             <div class="thumbnail bg-grey">
                 <img src="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/Images/social.jpg" class="img-responsive" alt="Picture" width="400" height="300" style="max-height: 500px; object-fit: cover;">
 
-                <h2><strong>Title</strong></h2>
-                <h4>Text</h4>
+         
             </div>
 
         </div>
+        
         <div class="col-sm-6">
+            <h2 style="color:#2E86C1;">Job Title</h2>
+            <hr style="border-top: 1px solid grey;">
             <h2>Google Developers</h2><br>
             <h3>Job Opportunity: Web Developers</h3>
-        </div>       
+            <br>
+            <table id="status">
+              <tr>
+                <th>Application Status</th>
+
+              </tr>
+              <tr>
+                <td>Not applied yet</td>
+              </tr>
+              <tr>
+                <td>No feedback</td>
+              </tr>
+            </table>
+        </div>  
+             
+    </div>
+    <hr style="border-top: 1px solid grey;">
+    
+    <div class="row">
+        <h2><strong>Job Requirements</strong></h2>
+        <br>
+        <table id="status">
+          <tr>
+            <th>What skills and certifications are required?</th>
+
+          </tr>
+          <tr>
+            <td>Four years experience</td>
+          </tr>
+          <tr>
+            <td>Python certification</td>
+          </tr>
+          <tr>
+            <td>Computer science degree</td>
+          </tr>
+          <tr>
+            <td>JavaScript Skills</td>
+          </tr>
+        </table>
+    </div>
+    <div class="row">
+    <br>
+    <div class="col-sm-8">
+    <a href="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Application_Process/applicationDetails.php"><button type="button" class="btn btn-success">Apply Now</button></a> 
+    </div>
+    <div class="col-sm-4">
+    <a href="#"><button type="button" class="btn btn-warning">Skype Job</button></a>
+    </div>
     </div>
 </div>
 
