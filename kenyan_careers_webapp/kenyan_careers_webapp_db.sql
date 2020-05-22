@@ -126,14 +126,20 @@ CREATE TABLE `cvs` (
 -- Table structure for table `employers`
 --
 
-CREATE TABLE `employers` (
-  `empId` int(11) NOT NULL,
-  `empName` varchar(30) DEFAULT NULL,
-  `empEmail` varchar(30) DEFAULT NULL,
-  `empPhone` int(11) DEFAULT NULL,
-  `empAddress` varchar(30) DEFAULT NULL,
-  `empPassword` longtext
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `employer_details` (
+  `emp_id` int(11) NOT NULL,
+  `emp_logo` blob NOT NULL,
+  `emp_category` varchar(30) NOT NULL,
+  `emp_name` varchar(30) NOT NULL,
+  `emp_email` varchar(30) NOT NULL,
+  `emp_phone` varchar(10) NOT NULL,
+  `emp_location` varchar(30) NOT NULL,
+  `emp_address` varchar(10) NOT NULL,
+  `emp_url` varchar(30) NOT NULL,
+  `emp_password` varchar(500) NOT NULL,
+  `emp_verification` varchar(500) DEFAULT NULL,
+  `emp_status` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 

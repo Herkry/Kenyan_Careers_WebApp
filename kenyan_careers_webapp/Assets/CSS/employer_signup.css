@@ -1,0 +1,56 @@
+body
+{
+    /* background-image: url(/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/Images/matte_black_background.jpg); */
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+}
+
+.container
+{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-self: center;
+    color: rgb(17, 46, 107);
+    background-color:rgb(255, 255, 255);
+    margin-top: 100px;
+    
+}
+#header
+{
+    /* border: white;
+    border-style: solid; */
+    text-align: center;
+    font-size: 2px;
+}
+.imageupload
+{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+}
+#myfile
+{
+    margin-top: 5px;
+    text-align: center;
+}
+#logo
+{
+    border-radius: 50%;
+}
+.form-group
+{
+    margin-top: 5px;
+    padding: 2px;
+    color: blue;
+}
+.col-md-6
+{
+    margin-left: 100px;
+    align-content: center;
+}
+.col-md-2
+{
+    margin-top: 40px;
+}
