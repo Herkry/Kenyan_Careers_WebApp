@@ -1,0 +1,38 @@
+body {
+    font-family: sans-serif;
+  }
+  .site-header 
+  {
+    background: rgb(255, 255, 255);
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    border-style: solid;
+    border-color: rgb(202, 234, 238);
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  .container
+  {
+    display: flex;
+    flex-direction: row;
+    flex-direction: row-reverse;
+    background-color: blue;
+  }
+
+  .footer 
+  {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: blue;
+    text-align: center;
+  }
+  #navid
+  {
+    display: flex;
+    justify-content:center;
+  }
