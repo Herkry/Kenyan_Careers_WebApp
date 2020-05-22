@@ -29,8 +29,8 @@
              <div class="row">
 
                     <div class="col-md-2">
-                         <a href="#change"><img id="logo" width = "200px" src="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/Images/employee_careers.png" alt="yourlogo" /></a>
-                         <input id="change" type='file' onchange="readURL(this);" />
+                         <a href="#change"><img id="logo" width = "200px"  src="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/Images/employee_careers.png" alt="yourlogo" /></a>
+                         <input id="change" type='file' name="logo" onchange="readURL(this);" />
                         <script>
                             function readURL(input)
                             {
@@ -49,7 +49,7 @@
                        </script>
                                               <br><br><br>
                                        <!--drop down menu for industry category-->
-                           <select required>
+                           <select name="category" required>
 
                             <option value="Conglomerate">Conglomerate</option>}
                             <option value="Mining">Mining</option>
@@ -67,6 +67,7 @@
                             <option value="Electronics">Electronics</option>
                             <option value="Pharmaceutical">Pharmaceutical</option>
                             <option value="Other">Other</option>
+
                             </select>
                      </div>
 
@@ -74,16 +75,16 @@
                      <div class="col-md-6">
                         <div class="form-group">
 
-                          <input type="text" name="" id="nameoforg" required class="form-control" placeholder="Input Name" aria-describedby="helpId">
+                          <input type="text" name="name" id="nameoforg" required class="form-control" placeholder="Input Name" aria-describedby="helpId">
                           <!-- <small id="helpId" class="text-muted">Help text</small> --><br>
-                          <input type="email" name="" id="emailaddress" required class="form-control" placeholder="Input Email Address" aria-describedby="helpId"><br>
-                          <input type="number" name="" id="phonenumber" required class="form-control" placeholder="Input Phone Number" aria-describedby="helpId"><br>
-                          <input type="text" name="" id="location" required class="form-control" placeholder="Input Location" aria-describedby="helpId"><br>
-                          <input type="text" name="" id="address" required class="form-control" placeholder="Input Address" aria-describedby="helpId"><br>
-                          <input type="url" name="" id="url" required class="form-control" placeholder="Input Company url" aria-describedby="helpId"><br>
+                          <input type="email" name="email" id="emailaddress" required class="form-control" placeholder="Input Email Address" aria-describedby="helpId"><br>
+                          <input type="number" name="phone" id="phonenumber" required class="form-control" placeholder="Input Phone Number" aria-describedby="helpId"><br>
+                          <input type="text" name="location" id="location" required class="form-control" placeholder="Input Location" aria-describedby="helpId"><br>
+                          <input type="text" name="address" id="address" required class="form-control" placeholder="Input Address" aria-describedby="helpId"><br>
+                          <input type="url" name="url" id="url" required class="form-control" placeholder="Input Company url" aria-describedby="helpId"><br>
 
-                          <input type="password" name="" id="password" required class="form-control" placeholder="Input Password" aria-describedby="helpId"><br>
-                          <input type="password" name="" id="cpassword" required class="form-control" placeholder="Confirm Password" aria-describedby="helpId"><br>
+                          <input type="password" name="password" id="password" required class="form-control" placeholder="Input Password" aria-describedby="helpId"><br>
+                          <input type="password" name="cpassword" id="cpassword" required class="form-control" placeholder="Confirm Password" aria-describedby="helpId"><br>
 
                           <!--Buttons definition-->
                           <div class="row">
@@ -94,7 +95,7 @@
 
                                 </div>
                                 <div class="col-md-4">
-                                <button type="submit" class="btn btn-outline-primary">Submit Details</button>
+                                <button name="submit" type="submit" class="btn btn-outline-primary">Submit Details</button>
                                 </div>
                           </div>
                     </div>
