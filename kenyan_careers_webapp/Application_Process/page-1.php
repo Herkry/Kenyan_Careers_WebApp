@@ -58,7 +58,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <nav class="navbar navbar-fixed-top navbar-inverse">
 <div id="constant" style="background: white; height: 40px; position: relative;">
 
-  <li ><a href="/Kenyan_Careers_WebApp/kenyan_careers_webapp/applicant_logout.php" style=""><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+  <li ><a href="/Kenyan_Careers_WebApp/kenyan_careers_webapp/applicant_logout.php" style=""><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 
 </div>
   <div class="container">
