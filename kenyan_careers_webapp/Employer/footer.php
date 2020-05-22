@@ -14,11 +14,11 @@ class Footer
         <div class="footer">
         <p>
         <img height="90" width="260" class="img-responsive" src="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/Images/kenyacareer_vectorcopy.png" alt="kenyacareer_logo">
-                    
+
         </p>
         </div>
         </body>
-        </html> 
+        </html>
 
         <?php
     }
@@ -41,19 +41,19 @@ class Footer
         <!-- <img height="90" width="260" class="img-responsive" src="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/Images/kenyacareer_vectorcopy.png" alt="kenyacareer_logo">-->
         </p>
 
-        
+
         <div class="row">
         <div class="col-md-12">
         <a href="#"><img height="100" width="100" class="img-responsive" src="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/Images/employee_act.png" alt="Employee Account"></a>
-        <a href="http://">Employee Account</a>
+        <a href="#">Create Employee Account</a>
         </div>
-     
-        
+
+
         </div>
 
         </div>
         </body>
-        </html> 
+        </html>
         <?php
 
     }

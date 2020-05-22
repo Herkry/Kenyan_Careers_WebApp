@@ -22,14 +22,14 @@
 
         <div class="container">
             <div id="header">
-                <h2 style = "color: blue; text-style: bold">New Company Profile</h2>
+                <h2 style = "color: blue;">New Employer Profile</h2>
             </div>
-
-            <form action="" method="post">
+            <!--Form definition for user input-->
+            <form action="employer_signup_database.php" method="post">
              <div class="row">
 
                     <div class="col-md-2">
-                         <a href="#change"><img id="logo" width = "200px" src="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/Images/logo-placeholder-png.png" alt="yourlogo" /></a>
+                         <a href="#change"><img id="logo" width = "200px" src="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/Images/employee_careers.png" alt="yourlogo" /></a>
                          <input id="change" type='file' onchange="readURL(this);" />
                         <script>
                             function readURL(input)
@@ -81,6 +81,9 @@
                           <input type="text" name="" id="location" required class="form-control" placeholder="Input Location" aria-describedby="helpId"><br>
                           <input type="text" name="" id="address" required class="form-control" placeholder="Input Address" aria-describedby="helpId"><br>
                           <input type="url" name="" id="url" required class="form-control" placeholder="Input Company url" aria-describedby="helpId"><br>
+
+                          <input type="password" name="" id="password" required class="form-control" placeholder="Input Password" aria-describedby="helpId"><br>
+                          <input type="password" name="" id="cpassword" required class="form-control" placeholder="Confirm Password" aria-describedby="helpId"><br>
 
                           <!--Buttons definition-->
                           <div class="row">
