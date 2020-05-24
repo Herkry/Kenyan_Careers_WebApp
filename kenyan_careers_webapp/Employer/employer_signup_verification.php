@@ -68,9 +68,9 @@ $footr->display_plain_footer();
         }
         if($_SERVER["REQUEST_METHOD"] == "POST")
         {
-            $verificationkey = mysqli_real_escape_string($conn,$_POST['verificationkey']);
+            $verificationkey = mysqli_real_escape_string($conn,$_POST['vercode']);
             echo $verificationkey;
-            $sql = "UPDATE employer_details SET emp_status = 1 WHERE verificationkey = '$verificationkey'";
+            $sql = "UPDATE employer_details SET emp_status = 1 WHERE emp_verification = '$verificationkey'";
 
             if ($conn->query($sql) === TRUE)
             {
@@ -78,10 +78,13 @@ $footr->display_plain_footer();
                   alert('Verification Complete. Now you can Login!');
                 </script>";
 
-            } else {
+                header('Location: employer_loginpage.php');
+
+            } else
+            {
                 echo "Error verifying record: " . $conn->error;
             }
-            header('Location: employer_loginpage.php');
+
         }
         $conn->close();
 
