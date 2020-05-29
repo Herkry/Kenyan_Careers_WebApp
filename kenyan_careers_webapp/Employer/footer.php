@@ -86,7 +86,6 @@ class Footer
       <a href="#">Talk to us</a>
       </div>
 
-
       </div>
 
       </div>
