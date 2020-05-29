@@ -1,5 +1,12 @@
 <<?php
+require_once('header.php');
+require_once('footer.php');
 
+$headr = new Header();
+$headr->plain_header_display();
+
+$footr = new Footer();
+$footr->display_socialmedia_footer();
  ?>
 
  <!DOCTYPE html>
@@ -10,7 +17,7 @@
    </head>
    <body>
      <p>
-       Account Creation was successful!
+        Account has been created successfully!
      </p>
 
    </body>

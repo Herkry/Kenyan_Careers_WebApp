@@ -84,7 +84,7 @@ $footr->display_plain_footer();
             {
                 echo "Error verifying record: " . $conn->error;
             }
-
+            
         }
         $conn->close();
 
