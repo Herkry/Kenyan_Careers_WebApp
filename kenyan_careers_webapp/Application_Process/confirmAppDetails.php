@@ -1,7 +1,6 @@
 <?php
-//start session
-session_start();
 //Checking whether user is logged in
+
 
 ?>
 
@@ -23,7 +22,7 @@ session_start();
   <link rel="stylesheet" href="/Assets/mdb/css/mdb.min.css">
   <!-- Your custom styles (optional) -->
 
-  <title>Qualifications</title>
+  <title>Confirm Application Details</title>
   <style>
       .yellow{
         background-color: yellow;
@@ -52,6 +51,9 @@ session_start();
       .height-120{
           height:120px;
       }
+      .height-150{
+          height:150px;
+      }
       .height-200{
           height:200px;
       }
@@ -67,9 +69,23 @@ session_start();
       .width-18rem{
         width:18rem;
       }
-
       .neg-margin-top{
           margin-top:-40px;
+      }
+      .margin-left{
+        margin-left:100px;    
+      }
+      .margin-right{
+        margin-right:100px;
+      }
+      .padding-left{
+        padding-left:300px;    
+      }
+      .padding-right{
+        padding-right:300px;
+      }
+      .vertical-center-text{
+          vertical-align: middle;
       }
 
   </style>
@@ -131,94 +147,55 @@ session_start();
         </div>
     </div>
 
-    <div class="container-fluid green">
-            <div class="row rounded d-flex justify-content-center mb-4 orange height-75 ">
-                <div class="col-sm-7 col-md-17 col-lg-7 rounded blue text-center-align neg-margin-top">
-                    <h2>Qualifications</h2>
-                    <p align="left">You will be required to enter details of any formal certifcaitons you might have undertaken. This information will be used to evaluate your application.</p>
+    <div class="container-fluid green padding-left padding-right pt-3 ">
+        <div class="container-fluid blue-flatui px-5">
+            <h2>Profile</h2>
+            <div class="row rounded mb-3 -center orange height-80 ">
+                <div class="col-sm-4 col-md-4 col-lg-4 rounded d-flex align-items-center yellow height-80">
+                    <h5>Name</h5>
+                </div>
+                <div class="col-sm-8 col-md-8 col-lg-8 rounded d-flex align-items-center blue height-80 ">
+                    <p>Harry</p>
                 </div>
             </div>
-            <!-- If $_SESSION("qualifications") is empty display NoQuals else display the Quals-->
-            <?php
-            if (count($_SESSION["qualifications"] == 0)){
-            ?>
-                <div class="row rounded d-flex justify-content-center mb-4 orange height-120">
-                    <div class="col-sm-7 col-md-17 col-lg-7 text-center pt-4 blue ">
-                        <h3>You currently have not added any qualifications</h3>
-                    </div>
+            <div class="row rounded mb-3 orange height-80">
+                <div class="col-sm-4 col-md-4 col-lg-4 rounded d-flex align-items-center yellow height-80">
+                    <h5>Name</h5>
                 </div>
-            <?php
-            }
-            else{
-            ?>
-                <div class="row rounded d-flex justify-content-center mb-4 orange height-200">
-                    <div class="card-deck">
-            <?php
-                //Continue from here
-                for($i = 0; $i < count($_SESSION["qualifications"]); $i++){
-            ?>
-                    <div class="card width-18rem">
-                        <div class="card-header">
-                            Qualification
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">University of Nairobi</li>
-                            <li class="list-group-item">Bsc in Computer Science</li>
-                            <li class="list-group-item">4 years</li>
-                        </ul>
-                    </div>
-            <?php        
-                }
-            ?>
+                <div class="col-sm-8 col-md-8 col-lg-8 rounded d-flex align-items-center blue height-80 ">
+                    <p>Harry</p>
                 </div>
-            </div>  
-            <?php
-            }
-            ?>
+            </div>
+            <div class="row rounded mb-3 orange height-80">
+                <div class="col-sm-4 col-md-4 col-lg-4 rounded d-flex align-items-center yellow height-80">
+                    <h5>Name</h5>
+                </div>
+                <div class="col-sm-8 col-md-8 col-lg-8 rounded d-flex align-items-center blue height-80 ">
+                    <p>Harry</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid blue-flatui px-5">
+            <h2>Application Details</h2>
+            <div class="row rounded mb-3 orange height-150 ">
+                <div class="col-sm-4 col-md-4 col-lg-4 rounded d-flex align-items-center yellow height-150">
+                    <h5>Strengths</h5>
+                </div>
+                <div class="col-sm-8 col-md-8 col-lg-8 rounded d-flex align-items-center blue height-150 ">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt aperiam soluta ipsam repudiandae magnam. Ratione impedit incidunt, debitis autem, corporis, quae illum provident et in aliquid tempora nihil eius harum ex aspernatur? Maiores tenetur saepe architecto debitis cum est odit.</p>
+                </div>
+            </div>
+            <div class="row rounded mb-3 orange height-80 justify-content-center">
+                <div class="col-sm-4 col-md-4 col-lg-4 rounded d-flex align-items-center text-center-align yellow height-80">
+                    <input class="btn-lg btn-primary" type="submit" value="Next">
+                </div>
+            </div>
             
-            <div class="row rounded d-flex justify-content-center mb-4 orange height-200">
-                <div class="card-deck">
-                  <div class="card width-18rem">
-                    <div class="card-header">
-                        Qualification
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">University of Nairobi</li>
-                        <li class="list-group-item">Bsc in Computer Science</li>
-                        <li class="list-group-item">4 years</li>
-                    </ul>
-                  </div>
-                  <div class="card width-18rem">
-                    <div class="card-header">
-                        Qualification
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">University of Nairobi</li>
-                        <li class="list-group-item">Bsc in Computer Science</li>
-                        <li class="list-group-item">4 years</li>
-                    </ul>
-                  </div>
-                  <div class="card width-18rem">
-                    <div class="card-header">
-                        Qualification
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">University of Nairobi</li>
-                        <li class="list-group-item">Bsc in Computer Science</li>
-                        <li class="list-group-item">4 years</li>
-                    </ul>
-                  </div>
-                </div>
-            </div>
+            
+        </div>
+        
+        
 
-            <div class="row rounded d-flex justify-content-center mb-4 orange height-120">
-                <div class="col-sm-7 col-md-17 col-lg-7 text-center pt-4 blue">
-                    <form action="qualificationsProcess.php" method="post">    
-                        <i class="fas fa-plus"></i>
-                        <input class="btn-lg btn-primary" type="submit" value="Add Qualification">
-                    </form>
-                </div>
-            </div>
     </div>  
     
   <!--MDB  -->

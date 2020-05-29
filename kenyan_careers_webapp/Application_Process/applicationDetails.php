@@ -1,3 +1,7 @@
+<?php
+//Checking whether user is logged in
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,12 +77,12 @@
   </style>
 </head>
 
-<body>
+<body class="blue-flatui">
 
     <nav class="navbar navbar-expand-lg navbar-dark blue-flatui">
         <a class="navbar-brand" href="#">
             <img src="C:/xampp/htdocs/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/Images/football.png"  alt="">
-                   YCS Bush
+                   Kenya Careers
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -119,7 +123,7 @@
         </div>
     </nav>
 
-    <div class="row mx-0 my-0 yellow height-140 yellow">
+    <div class="row mx-0 my-0 border-bottom border-dark height-140 light-flatui">
         <div class="col-sm-12 col-md-12 col-lg-12 px-0">
             <div class="text-center-align ">
                 <!-- <img src="C:\xampp\htdocs\Kenyan_Careers_WebApp\kenyan_careers_webapp\Assets\Images\code1.jpg" class="img-fluid height-200"  alt=""> -->
@@ -130,63 +134,62 @@
         </div>
     </div>
 
-    <div class="container-fluid green vh-100">
+    <div class="container-fluid vh-100">
 
         <form action="applicationDetailsProcess.php" method="post" id="appDits" enctype="multipart/form-data">
-            <div class="row rounded d-flex justify-content-center mb-4 orange height-75 ">
-                <div class="col-sm-7 col-md-17 col-lg-7 rounded blue text-center-align neg-margin-top">
+            <div class="row rounded d-flex justify-content-center mb-4 height-75 ">
+                <div class="col-sm-7 col-md-17 col-lg-7 light-flatui border border-dark rounded text-center-align neg-margin-top ">
                     <h2>Personal Details</h2>
                     <p align="left">Please enter your personal information below. 
                     This will be used to evaluate your application.</p>
                 </div>
             </div>
-            <div class="row rounded d-flex justify-content-center mb-4 orange height-170">
-                <div class="col-sm-7 col-md-17 col-lg-7 blue pt-4">
+            <div class="row rounded d-flex justify-content-center mb-4  height-170">
+                <div class="col-sm-7 col-md-17 col-lg-7 light-flatui border border-dark rounded pt-4">
                     <h2>Upload Curriculum Vitae</h2>
                     <input  type="file" id="myFile" name="fileToUpload"><br>
                     <a onclick="dataLossWarning()" class="btn btn-primary mt-3" href="#" role="button">Use CV Builder</a>
                 </div>
             </div>
-            <div class="row rounded d-flex justify-content-center mb-4  orange height-170">
-                <div class="col-sm-7 col-md-17 col-lg-7 blue pt-4 ">
+            <div class="row rounded d-flex justify-content-center mb-4  height-170">
+                <div class="col-sm-7 col-md-17 col-lg-7 light-flatui border border-dark rounded pt-4 ">
                     <h2>How did you know of this opportunity</h2>
                     <div class="md-form mb-4 pink-textarea active-pink-textarea">
-                        <textarea name="knowOpportunity" form="appDits" id="form18" class="md-textarea form-control" rows="3"></textarea>
+                        <textarea name="knowOpportunity" form="appDits" id="form18" class="md-textarea form-control" rows="3" placeholder="Your Answer..."></textarea>
                     </div>
                 </div>
             </div>
-            <div class="row rounded d-flex justify-content-center mb-4 orange height-170">
-                <div class="col-sm-7 col-md-17 col-lg-7 blue pt-4">
+            <div class="row rounded d-flex justify-content-center mb-4  height-170">
+                <div class="col-sm-7 col-md-17 col-lg-7 light-flatui border border-dark rounded pt-4">
                     <h2>What are your expectations</h2>
                     <div class="form-group shadow-textarea">
                         <textarea name="expectations" form="appDits" class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Your Answer..."></textarea>
                     </div>
                 </div>
             </div>
-            <div class="row rounded d-flex justify-content-center mb-4 orange height-170">
-                <div class="col-sm-7 col-md-17 col-lg-7 blue pt-4">
+            <div class="row rounded d-flex justify-content-center mb-4  height-170">
+                <div class="col-sm-7 col-md-17 col-lg-7 light-flatui border border-dark rounded pt-4">
                     <h2>What are your strengths</h2>
                     <div class="form-group shadow-textarea">
                         <textarea name="strengths" form="appDits" class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Your Answer..."></textarea>
                     </div>
                 </div>
             </div>
-            <div class="row rounded d-flex justify-content-center mb-4 orange height-170">
-                <div class="col-sm-7 col-md-17 col-lg-7 blue pt-4">
+            <div class="row rounded d-flex justify-content-center mb-4  height-170">
+                <div class="col-sm-7 col-md-17 col-lg-7 light-flatui border border-dark rounded pt-4">
                     <h2>What are your weaknesses</h2>
                     <div class="form-group shadow-textarea">
                         <textarea name="weaknesses" form="appDits" class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Your Answer..."></textarea>
                     </div>
                 </div>
             </div>
-            <div class="row rounded d-flex justify-content-center mb-4 orange">
-                <div class="col-sm-7 col-md-17 col-lg-7 pt-4 pb-4 text-center blue">
-                <input class="btn-lg btn-primary" type="submit" value="Next">
+            <div class="row rounded d-flex justify-content-center mb-4 ">
+                <div class="col-sm-7 col-md-17 col-lg-7 pt-4 pb-4 text-center light-flatui border border-dark rounded">
+                    <input class="btn-lg btn-primary" type="submit" value="Next">
+                </div>
             </div>
-
-        </div>
-
         </form>
+
     </div>
     
   <!-- Warning of data loss when onClick CV Builder button-->
