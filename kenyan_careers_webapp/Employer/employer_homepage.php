@@ -17,5 +17,9 @@ $footr->isLoggedin();
   </head>
   <body>
 
+    <div class="container">
+        <!--This part displays the blog content-->
+    </div>
+
   </body>
 </html>
