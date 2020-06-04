@@ -45,7 +45,7 @@
                    $mail->Subject = 'KenyaCareer Account Update';
                    $mail->Body = '
                    You have successfully updated your account.
-                   If this was not you, visit the help platform in kenyancareer.redone.com';
+                   If this was not you, visit the help platform in our Website';
                    $mail->AddAddress($email);
                    $mail->Send();
 
