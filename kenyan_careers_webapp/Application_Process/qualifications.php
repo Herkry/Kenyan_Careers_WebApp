@@ -3,6 +3,13 @@
 session_start();
 //Checking whether user is logged in
 
+//Test
+$_SESSION["qualifications"][0] = array(
+    "university"=>"UON",
+    "certification"=>"UON",
+    "noOfYrs"=>"UON"
+    );
+
 ?>
 
 <!DOCTYPE html>
@@ -67,9 +74,11 @@ session_start();
       .width-18rem{
         width:18rem;
       }
-
       .neg-margin-top{
           margin-top:-40px;
+      }
+      .pd-top-addQualButton{
+        padding-top:40px
       }
 
   </style>
@@ -121,6 +130,31 @@ session_start();
         </div>
     </nav>
 
+    <!-- Modal #Add Qualification# Form  -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="qual">
+        <form action="qualificationsProcess.php" method="post">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Add Qualification</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <input class="form-control" type="text" name="university" placeholder="University" required><br>
+                    <input class="form-control" type="text" name="certification" placeholder="Certification" required><br>
+                    <input class="form-control" type="text" name="noOfYrs" placeholder="Number of Years" required><br>
+                </div>
+                <div class="modal-footer">
+                    <input class="btn-lg btn-primary" type="submit" name="Add" value="Add">
+                </div>
+              </div>
+            </div>
+        </form>
+    </div>
+    
+
     <div class="row mx-0 my-0 yellow height-140 yellow">
         <div class="col-sm-12 col-md-12 col-lg-12 px-0">
             <div class="text-center-align ">
@@ -138,9 +172,10 @@ session_start();
                     <p align="left">You will be required to enter details of any formal certifcaitons you might have undertaken. This information will be used to evaluate your application.</p>
                 </div>
             </div>
-            <!-- If $_SESSION("qualifications") is empty display NoQuals else display the Quals-->
+            <!-- If $_SESSION("qualifications") is empty display NoQuals div else display the Quals div-->
             <?php
-            if (count($_SESSION["qualifications"] == 0)){
+            // $qualificationsNumber = 
+            if (count($_SESSION["qualifications"]) == 0){
             ?>
                 <div class="row rounded d-flex justify-content-center mb-4 orange height-120">
                     <div class="col-sm-7 col-md-17 col-lg-7 text-center pt-4 blue ">
@@ -162,9 +197,9 @@ session_start();
                             Qualification
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">University of Nairobi</li>
-                            <li class="list-group-item">Bsc in Computer Science</li>
-                            <li class="list-group-item">4 years</li>
+                            <li class="list-group-item"> <?php echo($_SESSION["qualifications"][$i]["university"])?> </li>
+                            <li class="list-group-item"> <?php echo($_SESSION["qualifications"][$i]["certification"])?> </li>
+                            <li class="list-group-item"> <?php echo($_SESSION["qualifications"][$i]["noOfYrs"])?> </li>
                         </ul>
                     </div>
             <?php        
@@ -175,47 +210,16 @@ session_start();
             <?php
             }
             ?>
-            
-            <div class="row rounded d-flex justify-content-center mb-4 orange height-200">
-                <div class="card-deck">
-                  <div class="card width-18rem">
-                    <div class="card-header">
-                        Qualification
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">University of Nairobi</li>
-                        <li class="list-group-item">Bsc in Computer Science</li>
-                        <li class="list-group-item">4 years</li>
-                    </ul>
-                  </div>
-                  <div class="card width-18rem">
-                    <div class="card-header">
-                        Qualification
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">University of Nairobi</li>
-                        <li class="list-group-item">Bsc in Computer Science</li>
-                        <li class="list-group-item">4 years</li>
-                    </ul>
-                  </div>
-                  <div class="card width-18rem">
-                    <div class="card-header">
-                        Qualification
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">University of Nairobi</li>
-                        <li class="list-group-item">Bsc in Computer Science</li>
-                        <li class="list-group-item">4 years</li>
-                    </ul>
-                  </div>
+                         
+            <div class="row rounded d-flex justify-content-center mb-4 orange height-120">
+                <div class="col-sm-7 col-md-17 col-lg-7 pd-top-addQual text-center  blue">
+                    <button type="button" class="btn-lg btn-primary" data-toggle="modal" data-target="#qual">Add Qualification</button>
                 </div>
             </div>
-
             <div class="row rounded d-flex justify-content-center mb-4 orange height-120">
-                <div class="col-sm-7 col-md-17 col-lg-7 text-center pt-4 blue">
-                    <form action="qualificationsProcess.php" method="post">    
-                        <i class="fas fa-plus"></i>
-                        <input class="btn-lg btn-primary" type="submit" value="Add Qualification">
+                <div class="col-sm-7 col-md-17 col-lg-7 text-center pd-top-addQualButton blue">
+                    <form action="qualificationsProcess.php" method="post">
+                        <input class="btn-lg btn-primary" type="submit" name="Next" value="Next">
                     </form>
                 </div>
             </div>

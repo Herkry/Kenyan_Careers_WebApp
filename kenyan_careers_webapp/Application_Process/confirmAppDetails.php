@@ -1,6 +1,31 @@
 <?php
+//Require--Check for errors
+require("sqlFunctions.php");
+//start session
+session_start();
 //Checking whether user is logged in
 
+
+//Selecting details of applicant from database
+
+//1. Selecting profile details
+//Get SESSION data from ISRAEL
+$appId = 1;
+
+//Query
+$selectApplicantDetails = "SELECT * FROM applicants WHERE appId = '$appId'";
+$rowApplicantDetails = getData($selectApplicantDetails);
+
+//2. Selecting jobApplicationDetails
+//Get session jobAppId
+$applicantJobAppId = $_SESSION["applicantJobAppId"];
+
+//Queries
+$selectApplicantJobAppDetails = "SELECT * FROM jobapplications WHERE jobAppId = '$applicantJobAppId'";
+$rowApplicantJobAppDetails = getData($selectApplicantJobAppDetails);
+
+$selectApplicantJobAppQualifications = "SELECT * FROM applicantqualifications WHERE jobAppId = '$applicantJobAppId'";
+$rowApplicantJobAppQualifications = getData($selectApplicantJobAppQualifications);
 
 ?>
 
@@ -87,6 +112,9 @@
       .vertical-center-text{
           vertical-align: middle;
       }
+      .pd-top-confirmButton{
+        padding-top:20px
+      }
 
   </style>
 </head>
@@ -147,50 +175,105 @@
         </div>
     </div>
 
-    <div class="container-fluid green padding-left padding-right pt-3 ">
-        <div class="container-fluid blue-flatui px-5">
-            <h2>Profile</h2>
+    <div class="container-fluid green padding-left padding-right pt-3">
+        <div class="container-fluid blue-flatui px-5 pt-3 mb-3">
+            <h2>Profile</h2><br>
             <div class="row rounded mb-3 -center orange height-80 ">
                 <div class="col-sm-4 col-md-4 col-lg-4 rounded d-flex align-items-center yellow height-80">
                     <h5>Name</h5>
                 </div>
                 <div class="col-sm-8 col-md-8 col-lg-8 rounded d-flex align-items-center blue height-80 ">
-                    <p>Harry</p>
+                    <p><?php echo($rowApplicantDetails[0]["appFname"]." ".$rowApplicantDetails[0]["appLname"]);?></p>
                 </div>
             </div>
             <div class="row rounded mb-3 orange height-80">
                 <div class="col-sm-4 col-md-4 col-lg-4 rounded d-flex align-items-center yellow height-80">
-                    <h5>Name</h5>
+                    <h5>Email Address</h5>
                 </div>
                 <div class="col-sm-8 col-md-8 col-lg-8 rounded d-flex align-items-center blue height-80 ">
-                    <p>Harry</p>
+                    <p><?php echo($rowApplicantDetails[0]["appEmail"]);?></p>
                 </div>
             </div>
             <div class="row rounded mb-3 orange height-80">
                 <div class="col-sm-4 col-md-4 col-lg-4 rounded d-flex align-items-center yellow height-80">
-                    <h5>Name</h5>
+                    <h5>Phone Contacts</h5>
                 </div>
                 <div class="col-sm-8 col-md-8 col-lg-8 rounded d-flex align-items-center blue height-80 ">
-                    <p>Harry</p>
+                    <p><?php echo($rowApplicantDetails[0]["appPhone"]);?></p>
                 </div>
             </div>
+            <div class="row rounded mb-3 orange height-80">
+                <div class="col-sm-4 col-md-4 col-lg-4 rounded d-flex align-items-center yellow height-80">
+                    <h5>Date of Birth</h5>
+                </div>
+                <div class="col-sm-8 col-md-8 col-lg-8 rounded d-flex align-items-center blue height-80 ">
+                    <p><?php echo($rowApplicantDetails[0]["appDOB"]);?></p>
+                </div>
+            </div>
+            <div class="row rounded mb-3 orange height-80">
+                <div class="col-sm-4 col-md-4 col-lg-4 rounded d-flex align-items-center yellow height-80">
+                    <h5>Location Address</h5>
+                </div>
+                <div class="col-sm-8 col-md-8 col-lg-8 rounded d-flex align-items-center blue height-80 ">
+                    <p><?php echo($rowApplicantDetails[0]["appAddress"]);?></p>
+                </div>
+            </div><br>
         </div>
-        <div class="container-fluid blue-flatui px-5">
-            <h2>Application Details</h2>
+        <div class="container-fluid blue-flatui px-5 pt-3 ">
+            <h2>Application Details</h2><br>
+            <div class="row rounded mb-3 orange height-150 ">
+                <div class="col-sm-4 col-md-4 col-lg-4 rounded d-flex align-items-center yellow height-150">
+                    <h5>Expectations</h5>
+                </div>
+                <div class="col-sm-8 col-md-8 col-lg-8 rounded d-flex align-items-center blue height-150 ">
+                    <p><?php echo ($rowApplicantJobAppDetails[0]["jobAppExpectations"]); ?></p>
+                </div>
+            </div>
             <div class="row rounded mb-3 orange height-150 ">
                 <div class="col-sm-4 col-md-4 col-lg-4 rounded d-flex align-items-center yellow height-150">
                     <h5>Strengths</h5>
                 </div>
                 <div class="col-sm-8 col-md-8 col-lg-8 rounded d-flex align-items-center blue height-150 ">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt aperiam soluta ipsam repudiandae magnam. Ratione impedit incidunt, debitis autem, corporis, quae illum provident et in aliquid tempora nihil eius harum ex aspernatur? Maiores tenetur saepe architecto debitis cum est odit.</p>
+                    <p><?php echo ($rowApplicantJobAppDetails[0]["jobAppStrengths"]); ?></p>
                 </div>
             </div>
-            <div class="row rounded mb-3 orange height-80 justify-content-center">
-                <div class="col-sm-4 col-md-4 col-lg-4 rounded d-flex align-items-center text-center-align yellow height-80">
-                    <input class="btn-lg btn-primary" type="submit" value="Next">
+            <div class="row rounded mb-3 orange height-150 ">
+                <div class="col-sm-4 col-md-4 col-lg-4 rounded d-flex align-items-center yellow height-150">
+                    <h5>Weaknesses</h5>
+                </div>
+                <div class="col-sm-8 col-md-8 col-lg-8 rounded d-flex align-items-center blue height-150 ">
+                    <p><?php echo ($rowApplicantJobAppDetails[0]["jobAppWeaknesses"]); ?></p>
                 </div>
             </div>
-            
+            <div class="row rounded d-flex justify-content-center mb-3 orange height-200">
+                    <div class="card-deck">
+            <?php
+                //Continue from here
+                for($i = 0; $i < count($rowApplicantJobAppQualifications); $i++){
+            ?>
+                    <div class="card width-18rem">
+                        <div class="card-header">
+                            Qualification
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"> <?php echo($$rowApplicantJobAppQualifications[$i]["appQualName"])?> </li>
+                            <li class="list-group-item"> <?php echo($rowApplicantJobAppQualifications["appQualInstitution"])?> </li>
+                            <li class="list-group-item"> <?php echo($rowApplicantJobAppQualifications["appQualInstTime"])?> </li>
+                        </ul>
+                    </div>
+            <?php        
+                }
+            ?>
+                </div>
+            </div> 
+
+            <div class="row rounded mb-3 d-flex justify-content-center orange height-80">
+                <div class="col-sm-7 col-md-7 col-lg-7 rounded text-center pd-top-confirmButton blue">
+                    <form action="confrimApplicationDetailsProcess.php" method="post">
+                        <input class="btn-lg btn-primary" type="submit" name="Confirm" value="Confirm">
+                    </form>
+                </div>
+            </div><br>            
             
         </div>
         

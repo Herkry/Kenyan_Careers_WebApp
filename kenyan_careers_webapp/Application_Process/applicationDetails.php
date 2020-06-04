@@ -185,7 +185,7 @@
             </div>
             <div class="row rounded d-flex justify-content-center mb-4 ">
                 <div class="col-sm-7 col-md-17 col-lg-7 pt-4 pb-4 text-center light-flatui border border-dark rounded">
-                    <input class="btn-lg btn-primary" type="submit" value="Next">
+                    <input class="btn-lg btn-primary" type="submit" name="Next" value="Next">
                 </div>
             </div>
         </form>
