@@ -158,7 +158,7 @@ class Header
      <!-- Nav tabs -->
       <ul class="nav nav-tabs" id="navId">
           <li class="nav-item">
-              <a href="#tab1Id" class="nav-link">My Profile</a>
+              <a href="employer_profile.php" class="nav-link">My Profile</a>
           </li>
           <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Vacancy Manager</a>
@@ -174,6 +174,14 @@ class Header
           </li>
           <li class="nav-item">
               <a href="#" class="nav-link">Help</a>
+          </li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Account Settings</a>
+              <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#tab2Id">Other Employers</a>
+                  <div class="dropdown-divider"></div>
+                  <a style="color:red;" class="dropdown-item" href="#tab4Id">Delete Account</a>
+              </div>
           </li>
       </ul>
 
