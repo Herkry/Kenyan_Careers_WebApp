@@ -33,7 +33,7 @@
            <b style="font-size:25px;color:red;">Confirm you want to delete your account! This action cannot be undone!  </b> <br> <br>
 
                <br> <br> <br> <br>
-              <a href="employer_homepage.php"><button name="cancel" type="" class="btn btn-outline-primary">Cancel</button></a> 
+              <a href="employer_homepage.php"><button name="cancel" type="" class="btn btn-outline-primary">Cancel</button></a>
                <button name="submit" type="submit" class="btn btn-outline-danger">Delete</button>
              </form>
 
