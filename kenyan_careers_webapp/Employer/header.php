@@ -158,7 +158,7 @@ class Header
      <!-- Nav tabs -->
       <ul class="nav nav-tabs" id="navId">
           <li class="nav-item">
-              <a href="#tab1Id" class="nav-link">My Profile</a>
+              <a href="employer_profile.php" class="nav-link">My Profile</a>
           </li>
           <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Vacancy Manager</a>
