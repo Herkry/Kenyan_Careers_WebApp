@@ -13,7 +13,7 @@ class Footer
         <body>
         <div class="footer">
         <p>
-        <img height="90" width="260" class="img-responsive" src="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/Images/kenyacareer_logo_transparent.png" alt="kenyacareer_logo">
+        <img height="90" width="260" class="img-responsive" src="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/Images/kenyancareer_logo_transparent.png" alt="kenyacareer_logo">
 
         </p>
         </div>
