@@ -1,7 +1,13 @@
 <?php
+session_start();
  require_once('footer.php');
  $footr = new Footer();
  $footr->display_plain_footer();
+
+ if(!isset($_SESSION['myid']))
+ {
+     header('location: employer_signup.php');
+ }
   ?>
  <!DOCTYPE html>
  <html lang="en" dir="ltr">
@@ -33,9 +39,11 @@
            <b style="font-size:25px;color:red;">Confirm you want to delete your account! This action cannot be undone!  </b> <br> <br>
 
                <br> <br> <br> <br>
-              <a href="employer_homepage.php"><button name="cancel" type="" class="btn btn-outline-primary">Cancel</button></a>
-               <button name="submit" type="submit" class="btn btn-outline-danger">Delete</button>
-             </form>
+
+               <form class="" action="<?php $_SERVER['PHP_SELF'];?>" method="post">
+                 <a href="employer_homepage.php"><button name="cancel" type="" class="btn btn-outline-primary">Cancel</button></a>
+                  <button name="submit" type="submit" class="btn btn-outline-danger">Delete</button>
+               </form>
 
            </div>
 
@@ -62,24 +70,22 @@
          {
              die("Connection failed: " . $conn->connect_error);
          }
+          $empid = $_SESSION['myid'];
          if($_SERVER["REQUEST_METHOD"] == "POST")
          {
-             $sql = "DELETE FROM employer_details WHERE emp_id = 7";
+             $sql = "DELETE FROM employer_details WHERE emp_id = $empid";
 
              if ($conn->query($sql) === TRUE)
              {
                  echo "<script>
-                   alert('Your Account has been deleted!');
+                 alert(\"Your account has been deleted!\");
+                 window.location='employer_loginpage.php';
                  </script>";
-
-                 header('Location:employer_loginpage.php');
-
-             } else
+             }
+             else
              {
                  echo "Error! Please try again!  " . $conn->error;
              }
-
          }
          $conn->close();
-
    ?>

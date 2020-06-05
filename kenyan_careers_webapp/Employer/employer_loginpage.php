@@ -3,7 +3,7 @@ require_once('header.php');
 require_once('footer.php');
 
 $headr = new Header();
-$headr->plain_header_display();
+$headr->plain_header_display2();
 
 $footr = new Footer();
 $footr->display_socialmedia_footer();
@@ -27,8 +27,7 @@ $footr->display_socialmedia_footer();
          <div class="row">
 
            <div class="col-md-12">
-             <!-- <a href="#change"><img id="logo" width = "100px"  src="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/Images/kenyacareer_logo_plain.png" alt="kenyaCareer_logo" /></a> -->
-             <!-- <b id="text1">Additional Verification</b> -->
+             
            </div>
 
          </div>
@@ -42,12 +41,7 @@ $footr->display_socialmedia_footer();
                <input type="email" name="email" id="vercode" required class="form-control" placeholder="Input your emailaddress" aria-describedby="helpId"><br>
                <input type="password" name="password" id="vercode" required class="form-control" placeholder="Input your password" aria-describedby="helpId"><br>
                <button name="submit" type="submit" class="btn btn-outline-primary">Login</button>
-               <br> <br> <br>
-               <a href="employer_signup.php"><button type="" class="btn btn-outline-primary">Create Account</button></a>
-             </form>
-
            </div>
-
          </div>
 
          </div>

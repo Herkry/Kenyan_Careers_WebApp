@@ -1,9 +1,15 @@
  <?php
+ session_start();
     include_once('emp_dbconnect.php');
     require_once('footer.php');
 
     $footr = new Footer();
     $footr->display_plain_footer();
+
+    if(!isset($_SESSION['myid']))
+    {
+        header('location: employer_loginpage.php');
+    }
  ?>
 
  <!DOCTYPE html>

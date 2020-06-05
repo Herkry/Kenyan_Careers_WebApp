@@ -89,7 +89,7 @@
                           <!--Buttons definition-->
                           <div class="row">
                                 <div class="col-md-4">
-                                    <button type="button" class="btn btn-outline-primary">Login</button>
+                                    <a href="employer_loginpage.php"><button type="button" class="btn btn-outline-primary">Login</button></a>  
                                 </div>
                                 <div class="col-md-4">
 
