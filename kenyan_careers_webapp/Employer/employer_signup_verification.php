@@ -38,7 +38,6 @@ $footr->display_plain_footer();
 
               <br> <br> <br> <br> <br>
               <button name="" type="" class="btn btn-outline-primary">Resend Email</button>
-              <button name="submit" type="submit" class="btn btn-outline-primary">Verify PhoneNumber</button>
             </form>
 
           </div>
@@ -84,7 +83,7 @@ $footr->display_plain_footer();
             {
                 echo "Error verifying record: " . $conn->error;
             }
-            
+
         }
         $conn->close();
 

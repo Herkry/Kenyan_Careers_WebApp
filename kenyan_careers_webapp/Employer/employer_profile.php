@@ -1,4 +1,5 @@
 <?php
+session_start();
   include_once('emp_dbconnect.php');
   //Requiring the header from the header.php file
   require_once('header.php');
@@ -10,6 +11,11 @@
 
   $footr = new Footer();
   $footr->display_plain_footer();
+
+  if(!isset($_SESSION['myid']))
+  {
+      header('location: employer_loginpage.php');
+  }
 
 ?>
 
@@ -25,8 +31,9 @@
     </head>
     <body>
 
-        <<?php
-        $sql = "SELECT * FROM employer_details WHERE emp_id=7";
+        <?php
+        $employerid = $_SESSION['myid'];
+        $sql = "SELECT * FROM employer_details WHERE emp_id = $employerid";
         $result = mysqli_query($conn, $sql);
         $resultCheck = mysqli_num_rows($result);
 
@@ -110,7 +117,7 @@
                       <!--Buttons definition-->
                       <div class="row">
                             <div class="col-md-4">
-                                <button type="button" class="btn btn-outline-primary">Cancel</button>
+                                <a href="employer_homepage.php"><button type="button" class="btn btn-outline-primary">Cancel</button></a> 
                             </div>
                             <div class="col-md-4">
 

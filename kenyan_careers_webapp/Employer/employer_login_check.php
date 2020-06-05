@@ -1,9 +1,9 @@
 <?php
 session_start();
 $error='';
-if(isset($_SESSION['uname']))
+if(isset($_SESSION['myid']))
 {
-    header('location: employee_homepage.php');
+    header('location: employer_homepage.php');
 }
 if (isset($_POST['submit']))
 {
@@ -26,13 +26,13 @@ if (isset($_POST['submit']))
         $sql ="select * from employer_details where emp_email = '$emailaddress' and emp_status  = 1";
         $result = mysqli_query($db, $sql);
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-
         $count = mysqli_num_rows($result);
         $rows = mysqli_num_rows($result);
+
         if(password_verify($pass, $row['emp_password']))
         {
-            $_SESSION['uname'] = $emailaddress;
-            header('location: employee_homepage.php');
+            $_SESSION['myid'] = $row['emp_id'];
+            header('location: employer_homepage.php');
         }
          else
          {
@@ -40,10 +40,12 @@ if (isset($_POST['submit']))
             <script>
                 {
                   alert(\"Your email or password is invalid!\");
+                  window.location='employer_loginpage.php';
                 }
             </script>";
-            $error = "Username or Password is invalid";
-            print($error);
+
+            // $error = "Username or Password is invalid";
+            // print($error);
         }
         mysqli_close($db);
     }
