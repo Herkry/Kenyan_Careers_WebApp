@@ -123,7 +123,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
   <style>
    .jumbotron {
   
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)); 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)); 
     /* padding-top: 33%; 
     padding-bottom: 10%; */
     /* background-size: cover; */
@@ -170,7 +170,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 
 
 <div class="jumbotron text-center">
-  <h1 style="border-radius: 25px; color: white; text-transform: uppercase;">Sign-in to apply</h1> 
+  <h1 style="border-radius: 25px; color: black; text-transform: uppercase;">Sign-in to apply</h1> 
 </div>
 
 
