@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Kenyan Career</title>
+    <title>Kenyan Career Employer</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -27,7 +27,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
+    <nav style="padding: 9px;" class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
             <a class="navbar-brand" href="#">Kenyan Career<span></span></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,10 +36,9 @@
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Upload CV</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Contact Us</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Careers Blog</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Help</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Log In</a></li>
 
                 </ul>
@@ -179,8 +178,8 @@
 
 
         <!--Employer or Seeker-->
-        <section style="padding: 20px;">
-            <h1 style="text-align: center;">Create new Account today!</h1>
+        <section style="padding:15px;background:lightblue;">
+            <h1 style="text-align: center;">Create new Account Today!</h1>
 
             <div class="conainer">
               <div class="row">
