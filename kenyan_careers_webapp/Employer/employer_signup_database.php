@@ -54,7 +54,7 @@
                    $mail->Port = '465';
                    $mail->isHTML(true);
                    $mail->Username = 'usaidizihub@gmail.com';
-                   $mail->Password = '******';
+                   $mail->Password = 'Qwetu307';
                    $mail->SetFrom('no-reply@howcode.org');
                    $mail->Subject = 'KenyaCareer Account';
                    $mail->Body = 'Your account has been created successfully.
