@@ -1,16 +1,6 @@
 <?php
 session_start();
   include_once('emp_dbconnect.php');
-  //Requiring the header from the header.php file
-
-  // // require_once('header.php');
-  // require_once('footer.php');
-
-  // $headr = new Header();
-  // $headr->isLoggedin2();
-  //
-  // $footr = new Footer();
-  // $footr->display_plain_footer();
 
   if(!isset($_SESSION['myid']))
   {
@@ -45,7 +35,6 @@ session_start();
         {
           while ($row = mysqli_fetch_assoc($result))
           {
-            // echo $row['emp_name']. "<br>";
          ?>
 
          <div class="container">
