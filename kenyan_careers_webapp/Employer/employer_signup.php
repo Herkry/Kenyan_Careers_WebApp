@@ -21,9 +21,9 @@
         <body>
 
         <div class="container">
-            <div id="header">
+            <!-- <div id="header">
                 <h2 style = "color: blue;">New Employer Profile</h2>
-            </div>
+            </div> -->
             <!--Form definition for user input-->
             <form action="employer_signup_database.php" method="post">
              <div class="row">
@@ -89,7 +89,7 @@
                           <!--Buttons definition-->
                           <div class="row">
                                 <div class="col-md-4">
-                                    <a href="employer_loginpage.php"><button type="button" class="btn btn-outline-primary">Login</button></a>  
+                                    <a href="employer_loginpage.php"><button type="button" class="btn btn-outline-primary">Login</button></a>
                                 </div>
                                 <div class="col-md-4">
 
