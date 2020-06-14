@@ -1,12 +1,12 @@
-<<?php
+<?php
 require_once('header.php');
-require_once('footer.php');
+// require_once('footer.php');
 
 $headr = new Header();
 $headr->plain_header_display2();
 
-$footr = new Footer();
-$footr->display_socialmedia_footer();
+// $footr = new Footer();
+// $footr->display_socialmedia_footer();
  ?>
 
  <!DOCTYPE html>
@@ -27,14 +27,14 @@ $footr->display_socialmedia_footer();
          <div class="row">
 
            <div class="col-md-12">
-             
+
            </div>
 
          </div>
 
          <div id="second" class="row">
            <div class="col-md-12">
-           <b>Input your details to login to your account: </b> <br> <br>
+           <h3 style = "color: blue;"> <b>Log in to your Account below</b></h3> <br>
 
              <form class="" action="employer_login_check.php" method="post">
 

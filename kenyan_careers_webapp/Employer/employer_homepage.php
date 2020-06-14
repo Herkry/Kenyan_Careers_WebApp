@@ -28,7 +28,7 @@ if(!isset($_SESSION['myid']))
 </head>
 <body style="background:white;" >
 <div id="logo" class="container">
-	<h1><a href="#"><img height="90" width="260" src="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/Images/kenyancareer_logo_transparent.png" alt="kenyan_career_logo"></a></h1>
+	<h3>Kenyan Careers</h3>
 </div>
 <div id="menu-wrapper">
 	<div id="menu" class="container">
