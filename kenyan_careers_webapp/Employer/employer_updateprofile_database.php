@@ -18,7 +18,6 @@
     if (isset($_POST['submit']))
    {
       //Initialization of the values
-      $category = $_POST['category'];
       $name = $_POST['name'];
       $email = $_POST['email'];
       $phone = $_POST['phone'];
@@ -26,7 +25,7 @@
       $address = $_POST['address'];
       $url = $_POST['url'];
 
-      $sql = "UPDATE employer_details SET emp_category='$category', emp_name='$name', emp_email='$email',emp_phone='$phone',emp_location='$location',emp_address='$address',emp_url='$url' WHERE emp_id=7";
+      $sql = "UPDATE employer_details SET emp_name='$name', emp_email='$email',emp_phone='$phone',emp_location='$location',emp_address='$address',emp_url='$url' WHERE emp_id=7";
 
         if ($conn->query($sql) === TRUE)
                 {
@@ -58,7 +57,7 @@
                        echo "Message could not be sent";
                    }
                    //Verification page
-                   header('Location: employer_profile.php');
+                   header('Location: employer_homepage.php');
                 }
                 else
                 {
