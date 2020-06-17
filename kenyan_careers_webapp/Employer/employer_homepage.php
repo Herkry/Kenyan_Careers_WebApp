@@ -37,7 +37,7 @@ if(!isset($_SESSION['myid']))
 		<ul>
 			<li><a href="/Kenyan_Careers_WebApp/kenyan_careers_webapp/index.html">Homepage</a></li>
 			<li><a href="employer_profile.php">Profile</a></li>
-      <li><a href="#">Vacancy</a></li>
+      <li><a href="employer_vacancy_home.php">Vacancy</a></li>
 			<li><a href="#">Blog Articles</a></li>
 			<li><a href="employers_all_list.php">View Other Employers</a></li>
 			<li><a href="employer_logout.php">Logout</a></li>
@@ -75,7 +75,7 @@ if(!isset($_SESSION['myid']))
 	</div>
 </div>
 <div id="footer" class="container">
-	<p>&copy; UsaidiziHub. All rights reserved. 2020</p>
+	<p>&copy; Kenyan Careers. All rights reserved. 2020</p>
 </div>
 </body>
 </html>

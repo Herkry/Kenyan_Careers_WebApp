@@ -27,9 +27,27 @@ session_start();
             <b style="color:green;">Back to My Dashboard</b> </h3>
 
          <div class="container">
-           
+
              <div id="header">
-                 <h2 style = "color: blue; font-weight: bold"> MY VACANCIES</h2>
+                 <h2 style = "color: blue; font-weight: bold"> My Vacancies</h2>
+             </div>
+
+             <div class="container" style="margin-left:110px;">
+
+             <div class="row" style="display: flex;align-content:center;flex-direction:row">
+               <div class="col-md-4">
+                 <b style="color:blue;">Add Vacancy</b><br>
+                 <a href="#"><img  width="100" height="100" src="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/Images/employeradd.png" alt=""></a>
+               </div>
+               <div class="col-md-4">
+                 <b style="color:blue;">Edit Vacancies</b> <br>
+                 <a href="#"><img  width="100" height="100" src="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/Images/employeredit.png" alt=""></a>
+               </div>
+               <div class="col-md-4">
+                 <b style="color:blue;"> Check Inbox</b><br>
+                 <a href="#"><img  width="100" height="100" src="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/Images/employeremail.png" alt=""></a>
+               </div>
+             </div>
              </div>
 
         </div>
