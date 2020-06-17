@@ -1,16 +1,6 @@
 <?php
 session_start();
   include_once('emp_dbconnect.php');
-  //Requiring the header from the header.php file
-  require_once('header.php');
-  require_once('footer.php');
-
-
-  $headr = new Header();
-  $headr->isLoggedin();
-
-  $footr = new Footer();
-  $footr->display_plain_footer();
 
   if(!isset($_SESSION['myid']))
   {
@@ -31,6 +21,10 @@ session_start();
     </head>
     <body>
 
+        <h3 style="text-align:center; margin-top:20px;">
+           <a href="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Employer/employer_homepage.php"><img src="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/Images/back_button.png" height="50px" alt=""></a>
+            <b style="color:green;">Back to My Dashboard</b> </h3>
+
         <?php
         $employerid = $_SESSION['myid'];
         $sql = "SELECT * FROM employer_details WHERE emp_id = $employerid";
@@ -41,14 +35,12 @@ session_start();
         {
           while ($row = mysqli_fetch_assoc($result))
           {
-            echo $row['emp_name']. "<br>";
          ?>
 
          <div class="container">
              <div id="header">
-                 <h2 style = "color: blue; font-weight: bold"> <?php echo $row['emp_name']; ?>'S Profile</h2>
+                 <h2 style = "color: blue; font-weight: bold"> <?php echo $row['emp_name']; ?>'s Profile</h2>
              </div>
-
 
         <!--Form definition for user input-->
         <form action="employer_updateprofile_database.php" method="post">
@@ -81,28 +73,8 @@ session_start();
 
                 <!-- </div> -->
                  <div class="col-md-6">
-                    <div class="form-group">
+                    <div class="form-group"
 
-                      <select name="category" value="<?php echo $row['emp_category']; ?>"  required>
-
-                       <option value="Conglomerate">Conglomerate</option>}
-                       <option value="Mining">Mining</option>
-                       <option value="Transport and Communication">Transport and Communication</option>
-                       <option value="Agriculture">Agriculture</option>
-                       <option value="Information Technology">Information Technology</option>
-                       <option value="Construction">Construction</option>
-                       <option value="Education">Education</option>
-                       <option value="Health">Health</option>
-                       <option value="Hospitality">Hospitality</option>
-                       <option value="Entertainment">Entertainment</option>
-                       <option value="Media">Media</option>
-                       <option value="Manufacturing">Manufacturing</option>
-                       <option value="Music">Music</option>
-                       <option value="Electronics">Electronics</option>
-                       <option value="Pharmaceutical">Pharmaceutical</option>
-                       <option value="Other">Other</option>
-
-                     </select> <br> <br>
                       <input type="text" name="name" value="<?php echo $row['emp_name']; ?>" id="nameoforg" required class="form-control" placeholder="Input Name" aria-describedby="helpId">
                       <!-- <small id="helpId" class="text-muted">Help text</small> --><br>
                       <input type="email" name="email" value="<?php echo $row['emp_email']; ?>" id="emailaddress" required class="form-control" placeholder="Input Email Address" aria-describedby="helpId"><br>
@@ -117,7 +89,7 @@ session_start();
                       <!--Buttons definition-->
                       <div class="row">
                             <div class="col-md-4">
-                                <a href="employer_homepage.php"><button type="button" class="btn btn-outline-primary">Cancel</button></a> 
+                                <a href="employer_homepage.php"><button type="button" class="btn btn-outline-primary">Cancel</button></a>
                             </div>
                             <div class="col-md-4">
 

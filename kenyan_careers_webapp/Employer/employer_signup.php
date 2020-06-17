@@ -5,9 +5,9 @@
 
       $headr = new Header();
       $headr->plain_header_display();
-
-      $footr = new Footer();
-      $footr->display_social_footer();
+      //
+      // $footr = new Footer();
+      // $footr->display_social_footer();
     ?>
 
     <html>
@@ -22,12 +22,12 @@
 
         <div class="container">
             <div id="header">
-                <h2 style = "color: blue;">New Employer Profile</h2>
+                <h3 style = "color: blue;"> <b>Create new Employer Account below;</b></h3>
             </div>
             <!--Form definition for user input-->
             <form action="employer_signup_database.php" method="post">
              <div class="row">
-
+                <br>
                     <div class="col-md-2">
                          <a href="#change"><img id="logo" width = "200px"  src="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/Images/employee_careers.png" alt="yourlogo" /></a>
                          <input id="change" type='file' name="logo" onchange="readURL(this);" />
@@ -47,7 +47,7 @@
                                 }
                             }
                        </script>
-                                              <br><br><br>
+                                              <br><br><br><br>
                                        <!--drop down menu for industry category-->
                            <select name="category" required>
 
@@ -89,7 +89,7 @@
                           <!--Buttons definition-->
                           <div class="row">
                                 <div class="col-md-4">
-                                    <a href="employer_loginpage.php"><button type="button" class="btn btn-outline-primary">Login</button></a>  
+                                    <a href="employer_loginpage.php"><button type="button" class="btn btn-outline-primary">Login</button></a>
                                 </div>
                                 <div class="col-md-4">
 

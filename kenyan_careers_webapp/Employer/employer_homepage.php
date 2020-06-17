@@ -4,7 +4,6 @@ session_start();
 // require_once('footer.php');
 // $headr = new Header();
 // $headr->isLoggedin();
-//
 // $footr = new Footer();
 // $footr->isLoggedin();
 
@@ -26,31 +25,33 @@ if(!isset($_SESSION['myid']))
 <link href="default_ie6.css" rel="stylesheet" type="text/css" />
 <![endif]-->
 </head>
-<body style="background:white;" >
+<body>
 <div id="logo" class="container">
-	<h1><a href="#"><img height="90" width="260" src="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/Images/kenyancareer_logo_transparent.png" alt="kenyan_career_logo"></a></h1>
+
+  <h2 style="text-align:center;font-size:30px;"><b> <a href="/Kenyan_Careers_WebApp/kenyan_careers_webapp/index.html">KENYAN CAREERS</a></b> </h2>
+
 </div>
+
 <div id="menu-wrapper">
 	<div id="menu" class="container">
 		<ul>
-			<li><a href="#">Homepage</a></li>
+			<li><a href="/Kenyan_Careers_WebApp/kenyan_careers_webapp/index.html">Homepage</a></li>
 			<li><a href="employer_profile.php">Profile</a></li>
-			<li><a href="#">Blog</a></li>
-			<li><a href="#">Vacancy</a></li>
-			<li><a href="employers_all_list.php">Other Employers</a></li>
+      <li><a href="employer_vacancy_home.php">Vacancy</a></li>
+			<li><a href="#">Blog Articles</a></li>
+			<li><a href="employers_all_list.php">View Other Employers</a></li>
 			<li><a href="employer_logout.php">Logout</a></li>
-			<li><a href="#">Contact Us</a></li>
 		</ul>
-
 	</div>
 </div>
+
 <div id="page" class="container">
 	<div id="box1">
 		<h2 class="title"><a href="#">Welcome to KenyanCareer</a></h2>
 		<div style="clear: both;">&nbsp;</div>
 		<div class="entry">
 			<p>As <strong>KenyanCareer </strong>, we believe you deserve the best, and that is why we are here.</p>
-			<p>Solving your greatest worry pertaining the whole enchilada of job hiring and propelling your business forward is our mission. Incase of any enquiries: call us on +254707159659</p>
+			<p>Solving your greatest worry pertaining the whole enchilada of job hiring and propelling your business forward is our mission. Incase of any enquiries: call us on +254712345678</p>
 		</div>
 	</div>
 	<div id="box2">
@@ -74,7 +75,7 @@ if(!isset($_SESSION['myid']))
 	</div>
 </div>
 <div id="footer" class="container">
-	<p>&copy; MSD. All rights reserved. 2020</p>
+	<p>&copy; Kenyan Careers. All rights reserved. 2020</p>
 </div>
 </body>
 </html>
