@@ -11,22 +11,29 @@
 		return $link;
 	}
 	
-	function setData($sql)
-	{
+	//Add data to the database
+	function setData($sql){
 		$link = connect();
-		if(mysqli_query($link,$sql)){
+		if (mysqli_query($link,$sql)){
 			return true;
-		}
-		else{
-			//$err = $link->error;
+		} else {
 			return false;
-			// false;
-			
 		}
 	}
 
-	function getData($sql)
-	{
+	//Sign in function
+	function signIn($sql){
+		$link = connect();
+		$result = mysqli_query($link,$sql);
+		$rowData = array();
+		while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+			$rowData[]= $row;
+		}
+		return $rowData;
+	}
+
+	//Get data from the database based on the SQL query provided
+	function getData($sql){
 		$link = connect();
 		$result = mysqli_query($link,$sql);
 		$rowData = array();
@@ -35,30 +42,6 @@
 		}
 		return $rowData;
 		
-	}
-
-	//Get categories listed in the jobs table
-	function getCategories(){
-		$sql = "SELECT jobCategory FROM jobs GROUP BY jobCategory ASC";
-		$link = connect();
-		$result = mysqli_query($link,$sql);
-		$rowData = array();
-		while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
-			$rowData[]= $row;
-		}
-		return $rowData;
-	}
-
-	//Get the locations listed in the jobs table
-	function getLocations(){
-		$sql = "SELECT jobLocation FROM jobs GROUP BY jobLocation ASC";
-		$link = connect();
-		$result = mysqli_query($link,$sql);
-		$rowData = array();
-		while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
-			$rowData[]= $row;
-		}
-		return $rowData;
 	}
 ?>
 
