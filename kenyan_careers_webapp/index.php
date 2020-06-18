@@ -108,7 +108,7 @@ function display(){
                              <img src="Assets/Images/callcon.png" style="width: 50px; height: 50px">
                                 <p> Find out how we help you <br> get you the best candidates </p>
                                 <br>
-                                <a href="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Employer/employer_signup.php"><button class="btn btn-primary"type="button" name="button">Get Started</button></a>
+                                <a href="#"><button class="btn btn-primary"type="button" name="button">Get Started</button></a>
                             </div>
                         </div>
                     </div>
