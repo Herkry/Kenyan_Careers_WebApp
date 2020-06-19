@@ -10,15 +10,31 @@ CREATE TABLE Applicants(
     appAddress VARCHAR(30),
     appPassword LONGTEXT
 );
+--Employer's table
+CREATE TABLE `employer_details` (
+  `emp_id` int(11) NOT NULL,
+  `emp_logo` blob NOT NULL,
+  `emp_category` varchar(30) NOT NULL,
+  `emp_name` varchar(30) NOT NULL,
+  `emp_email` varchar(30) NOT NULL,
+  `emp_phone` varchar(10) NOT NULL,
+  `emp_location` varchar(30) NOT NULL,
+  `emp_address` varchar(10) NOT NULL,
+  `emp_url` varchar(30) NOT NULL,
+  `emp_password` varchar(500) NOT NULL,
+  `emp_verification` varchar(500) DEFAULT NULL,
+  `emp_status` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE Employers(
-	empId INT PRIMARY KEY AUTO_INCREMENT,
-    empName VARCHAR(30),
-    empEmail VARCHAR(30) ,
-    empPhone INT,
-    empAddress VARCHAR(30),
-    empPassword LONGTEXT
-);
+	ALTER TABLE `employer_details`
+  ADD PRIMARY KEY (`emp_id`);
+
+	ALTER TABLE `employer_details`
+	  MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+	COMMIT;
+--end of employer's table
+
+-- Dumping dat
 
 CREATE TABLE `jobs` (
   `jobId` int(11) NOT NULL,
@@ -76,7 +92,7 @@ ALTER TABLE `jobs`
 CREATE TABLE JobRequirements(
 	jobReqId int PRIMARY KEY AUTO_INCREMENT,
     jobReqDescr Text,
-    
+
     jobId INT,
     FOREIGN KEY(jobId) REFERENCES Jobs(jobId)
 );
@@ -85,7 +101,7 @@ CREATE TABLE JobApplications(
 	jobAppId int PRIMARY KEY AUTO_INCREMENT,
     jobAppStatus VARCHAR(30),
     jobAppCV TEXT,
-    
+
     appId INT,
     jobId INT,
     FOREIGN KEY(appId) REFERENCES Applicants(appId),
@@ -97,7 +113,7 @@ CREATE TABLE ApplicantQualifications(
 	appQualId int PRIMARY KEY AUTO_INCREMENT,
     appQualName VARCHAR(30),
     appQualInstitution VARCHAR(30),
-    
+
     jobAppId INT,
     FOREIGN KEY(jobAppId) REFERENCES jobApplications(jobAppId)
 );
@@ -106,7 +122,7 @@ CREATE TABLE ApplicantPastJobs(
 	appPastJobId int PRIMARY KEY AUTO_INCREMENT,
     appPastJobName VARCHAR(30),
     appPastJobYears DOUBLE,
-    
+
     jobAppId INT,
 	FOREIGN KEY(jobAppId) REFERENCES JobApplications(jobAppId)
 );
@@ -116,7 +132,7 @@ CREATE TABLE CVs(
     cvReq1 TEXT,
     cvReq2 TEXT,
     cvGenerationDate DATE,
-    
+
     jobAppId INT,
     FOREIGN KEY(jobAppId) REFERENCES JobApplications(jobAppId)
 );
@@ -126,7 +142,7 @@ CREATE TABLE Bloggers(
     bloggerFname VARCHAR(30),
     bloggerLname VARCHAR(30),
     bloggerEmail VARCHAR(30),
-    bloggerPhone INT    
+    bloggerPhone INT
 );
 
 CREATE TABLE Articles(
@@ -134,31 +150,31 @@ CREATE TABLE Articles(
     articleTitle VARCHAR(30),
     articleBody LONGTEXT,
     articleStatus VARCHAR(30),
-    
+
 	bloggerId INT,
-    FOREIGN KEY(bloggerId) REFERENCES Bloggers(bloggerId)  
+    FOREIGN KEY(bloggerId) REFERENCES Bloggers(bloggerId)
 );
 
 CREATE TABLE ArticleRatings(
     articleRatingId INT PRIMARY KEY AUTO_INCREMENT,
     articleComment TEXT,
     articleRating DOUBLE,
-	
+
     articleId INT,
-    FOREIGN KEY(articleId) REFERENCES Articles(articleId)  
+    FOREIGN KEY(articleId) REFERENCES Articles(articleId)
 );
 
- 
+
 2) --Add columns
    --jobAppExpectations
    --jobAppStrengths
    --jobAppWeaknesses to jobApplications table
-   
+
   ALTER TABLE jobApplications
   ADD jobAppExpectations TEXT;
-  
+
   ALTER TABLE jobApplications
-  ADD jobAppStrengths TEXT; 
-  
+  ADD jobAppStrengths TEXT;
+
   ALTER TABLE jobApplications
   ADD jobAppWeaknesses TEXT;
