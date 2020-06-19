@@ -10,6 +10,14 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   exit;
 }
 
+
+?>
+
+<?php
+
+require_once "sqlFunctions.php";
+$link = connect();
+$username = $_SESSION["username"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -107,7 +115,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 
 <div class="jumbotron text-center">
-  <h1 style="border-radius: 25px; color: black; text-transform: uppercase;">Job Description</h1> 
+  <h1 style="border-radius: 25px; color: black; text-transform: uppercase;">Application Feedback</h1> 
 </div>
 
 
@@ -124,23 +132,63 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         </div>
         
         <div class="col-sm-6">
-            <h2 style="color:#2E86C1;">Job Title</h2>
-            <hr style="border-top: 1px solid grey;">
-            <h2>Google Developers</h2><br>
-            <h3>Job Application Feedback</h3>
-            <br>
-            <table id="status">
-              <tr>
-                <th>Application Status</th>
 
-              </tr>
-              <tr>
-                <td>Not applied yet</td>
-              </tr>
-              <tr>
-                <td>No feedback</td>
-              </tr>
-            </table>
+            <?php
+                  $appId = $_POST["jobAppId"];
+                  $query1 = "SELECT * FROM `jobapplications` WHERE appId = '$appId'";
+                  $result = $link->query($query1);
+
+                  while ($row = $result->fetch_assoc()){
+
+                    
+
+
+                            $jobId = $row['jobId'];
+                            $query2 = "SELECT * FROM `jobs` WHERE jobId = '$jobId'";
+                            $result2 = $link->query($query2);
+          
+                            while ($row2 = $result2->fetch_assoc()){
+
+                                echo "
+
+                                    <h2 style='color:#2E86C1;'>Job Title</h2>
+                                    <hr style='border-top: 1px solid grey;'>
+                                    <h2>".$row2['jobName']."</h2><br>
+                                    <h3>Job Application Feedback</h3>
+                                    <br>
+
+                                ";
+
+                            }
+
+                                                
+                        
+                            echo "
+
+                                <table id='status'>
+                                    <tr>
+                                        <th>Application Status</th>
+                        
+                                    </tr>
+                        
+                                    <tr>
+                                        <td>".$row['jobAppStatus']."</td>
+                                    </tr>
+                                </table>
+
+                            
+                                <form method='post'>
+                                <input type = 'hidden' name = 'jobId' value = '".$row['jobId']."'/>
+                                
+                                </form>	
+
+                            ";
+
+
+                        }
+            
+            ?>
+
         </div>  
              
     </div>
