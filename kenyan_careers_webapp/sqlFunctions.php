@@ -4,7 +4,7 @@
 		$dbserver = "localhost";
 		$username = "root";
 		$password = "";
-		$dbname = "icspro";
+		$dbname = "kenyan_careers_webapp_db";
 		
 		$link = mysqli_connect($dbserver, $username, $password, $dbname);
 		//or die("Could not connect");
