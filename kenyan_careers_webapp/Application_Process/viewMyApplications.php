@@ -16,6 +16,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 $appId = 1;
 
 
+
 //Query
 $selectApplicantJobAppDetails = "SELECT * FROM jobapplications WHERE appId = '$appId'";
 $rowApplicantJobAppDetails = getData($selectApplicantJobAppDetails);
