@@ -1,40 +1,26 @@
-///////////Update1 below
-1)--Delete old DB and create new one with autoincrement
-CREATE TABLE Applicants(
-	appId INT PRIMARY KEY AUTO_INCREMENT,
-    appFname VARCHAR(30),
-    appLname VARCHAR(30),
-    appDOB DATE,
-    appEmail VARCHAR(30) ,
-    appPhone INT,
-    appAddress VARCHAR(30),
-    appPassword LONGTEXT
-);
---Employer's table
-CREATE TABLE `employer_details` (
-  `emp_id` int(11) NOT NULL,
-  `emp_logo` blob NOT NULL,
-  `emp_category` varchar(30) NOT NULL,
-  `emp_name` varchar(30) NOT NULL,
-  `emp_email` varchar(30) NOT NULL,
-  `emp_phone` varchar(10) NOT NULL,
-  `emp_location` varchar(30) NOT NULL,
-  `emp_address` varchar(10) NOT NULL,
-  `emp_url` varchar(30) NOT NULL,
-  `emp_password` varchar(500) NOT NULL,
-  `emp_verification` varchar(500) DEFAULT NULL,
-  `emp_status` tinyint(1) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+-- phpMyAdmin SQL Dump
+-- version 4.9.0.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jun 19, 2020 at 12:32 PM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.3.9
 
-	ALTER TABLE `employer_details`
-  ADD PRIMARY KEY (`emp_id`);
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
 
-	ALTER TABLE `employer_details`
-	  MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
-	COMMIT;
---end of employer's table
+--
+-- Database: `kenyan_careers_webapp_db`
+--
 
--- Dumping dat
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jobs`
+--
 
 CREATE TABLE `jobs` (
   `jobId` int(11) NOT NULL,
@@ -88,93 +74,4 @@ ALTER TABLE `jobs`
 --
 ALTER TABLE `jobs`
   ADD CONSTRAINT `jobs_ibfk_1` FOREIGN KEY (`empId`) REFERENCES `employers` (`empId`);
-
-CREATE TABLE JobRequirements(
-	jobReqId int PRIMARY KEY AUTO_INCREMENT,
-    jobReqDescr Text,
-
-    jobId INT,
-    FOREIGN KEY(jobId) REFERENCES Jobs(jobId)
-);
-
-CREATE TABLE JobApplications(
-	jobAppId int PRIMARY KEY AUTO_INCREMENT,
-    jobAppStatus VARCHAR(30),
-    jobAppCV TEXT,
-
-    appId INT,
-    jobId INT,
-    FOREIGN KEY(appId) REFERENCES Applicants(appId),
-    FOREIGN KEY(jobId) REFERENCES Jobs(jobId)
-
-);
-
-CREATE TABLE ApplicantQualifications(
-	appQualId int PRIMARY KEY AUTO_INCREMENT,
-    appQualName VARCHAR(30),
-    appQualInstitution VARCHAR(30),
-
-    jobAppId INT,
-    FOREIGN KEY(jobAppId) REFERENCES jobApplications(jobAppId)
-);
-
-CREATE TABLE ApplicantPastJobs(
-	appPastJobId int PRIMARY KEY AUTO_INCREMENT,
-    appPastJobName VARCHAR(30),
-    appPastJobYears DOUBLE,
-
-    jobAppId INT,
-	FOREIGN KEY(jobAppId) REFERENCES JobApplications(jobAppId)
-);
-
-CREATE TABLE CVs(
-	cvId INT PRIMARY KEY AUTO_INCREMENT,
-    cvReq1 TEXT,
-    cvReq2 TEXT,
-    cvGenerationDate DATE,
-
-    jobAppId INT,
-    FOREIGN KEY(jobAppId) REFERENCES JobApplications(jobAppId)
-);
-
-CREATE TABLE Bloggers(
-	bloggerId INT PRIMARY KEY AUTO_INCREMENT,
-    bloggerFname VARCHAR(30),
-    bloggerLname VARCHAR(30),
-    bloggerEmail VARCHAR(30),
-    bloggerPhone INT
-);
-
-CREATE TABLE Articles(
-	articleId INT PRIMARY KEY AUTO_INCREMENT,
-    articleTitle VARCHAR(30),
-    articleBody LONGTEXT,
-    articleStatus VARCHAR(30),
-
-	bloggerId INT,
-    FOREIGN KEY(bloggerId) REFERENCES Bloggers(bloggerId)
-);
-
-CREATE TABLE ArticleRatings(
-    articleRatingId INT PRIMARY KEY AUTO_INCREMENT,
-    articleComment TEXT,
-    articleRating DOUBLE,
-
-    articleId INT,
-    FOREIGN KEY(articleId) REFERENCES Articles(articleId)
-);
-
-
-2) --Add columns
-   --jobAppExpectations
-   --jobAppStrengths
-   --jobAppWeaknesses to jobApplications table
-
-  ALTER TABLE jobApplications
-  ADD jobAppExpectations TEXT;
-
-  ALTER TABLE jobApplications
-  ADD jobAppStrengths TEXT;
-
-  ALTER TABLE jobApplications
-  ADD jobAppWeaknesses TEXT;
+COMMIT;
