@@ -70,7 +70,8 @@ function display(){
                     <li class="nav-item"><a href="#" class="nav-link">Upload CV</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Contact Us</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link" style="color: orange;">Log In</a></li>
+                    <li class="nav-item"><a href="login.php" class="nav-link" style="color: orange;">Log In</a></li>
+                    <li class="nav-item"><a href="registration.php" class="nav-link" style="color: orange;">Sign In</a></li>
 
                 </ul>
             </div>
@@ -107,7 +108,7 @@ function display(){
                              <img src="Assets/Images/callcon.png" style="width: 50px; height: 50px">
                                 <p> Find out how we help you <br> get you the best candidates </p>
                                 <br>
-                                <p>Call +254712345678 <br> to get started </p>
+                                <a href="#"><button class="btn btn-primary"type="button" name="button">Get Started</button></a>
                             </div>
                         </div>
                     </div>
@@ -144,8 +145,9 @@ function display(){
                             <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
                                 <input type="hidden" name="category" value="submit">
                                 <?php
-                                //List the categories got from the database
-                                    $category = getCategories();
+                                //List the categories saved in the database
+                                    $sql = "SELECT jobCategory FROM jobs GROUP BY jobCategory ASC";
+                                    $category = getData($sql);
                                     if (count($category)>0):
                                         for ($i = 0; $i < count($category); $i++):
                                 ?>
@@ -166,8 +168,9 @@ function display(){
                             <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
                                 <input type="hidden" name="location" value="submit">
                                 <?php
-                                //List the locations got from the database
-                                    $location = getLocations();
+                                //List the locations saved in the database
+		                            $sql = "SELECT jobLocation FROM jobs GROUP BY jobLocation ASC";
+                                    $location = getData($sql);
                                     if (count($location)>0):
                                         for ($i = 0; $i < count($location); $i++):
                                 ?>
