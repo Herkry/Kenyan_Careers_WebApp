@@ -1,5 +1,29 @@
 <?php
+//Require--Check for errors
+require("sqlFunctions.php");
+//start sessions
+session_start();
+
 //Checking whether user is logged in
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: /Kenyan_Careers_WebApp/kenyan_careers_webapp/applicant_login.php");
+    exit;
+  }
+//getting user's name
+//Get SESSION data from ISRAEL
+$appId = 1;
+$appId = $_SESSION["id"];
+
+
+//Query
+$selectApplicantName = "SELECT * FROM applicants WHERE appId = '$appId'";
+$rowSelectApplicantName = getData($selectApplicantName);
+
+//create session for user name logged
+$_SESSION["name_of_user"] = $rowSelectApplicantName[0]["appLname"];
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -81,7 +105,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark blue-flatui">
         <a class="navbar-brand" href="#">
-            <img src="C:/xampp/htdocs/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/Images/football.png"  alt="">
+            <img src="http://localhost/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/Images/football.png"  class="img-fluid" alt="" style="width:40px; height:40px;">
                    Kenya Careers
         </a>
 
@@ -127,8 +151,8 @@
         <div class="col-sm-12 col-md-12 col-lg-12 px-0">
             <div class="text-center-align ">
                 <!-- <img src="C:\xampp\htdocs\Kenyan_Careers_WebApp\kenyan_careers_webapp\Assets\Images\code1.jpg" class="img-fluid height-200"  alt=""> -->
-                <img src="C:/xampp/htdocs/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/Images/football.png" class="img-fluid height-80 width-80 "  alt="icon.png">
-                <h1>Welcome Harry</h1>
+                <img src="http://localhost/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/Images/football.png" class="img-fluid"  alt="icon.png" style="width:40px; height:40px;">
+                <h1>Welcome <?php echo($_SESSION["name_of_user"])?></h1>
                 
             </div>
         </div>

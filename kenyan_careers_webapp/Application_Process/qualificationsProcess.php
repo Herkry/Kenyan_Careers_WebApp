@@ -34,19 +34,6 @@ if(isset($_POST["Add"])){
 
 //getting post data once all qualifications have been added
 if(isset($_POST["Next"])){
-    for($i = 0; $i < count($_SESSION["qualifications"]); $i++){
-        //Inserting qualifications details to database
-        $university = $_SESSION["qualifications"][$i]["university"];
-        $certification = $_SESSION["qualifications"][$i]["certification"];
-        $noOfYrs = $_SESSION["qualifications"][$i]["noOfYrs"];
-        $applicantJobAppId = $_SESSION["applicantJobAppId"];
-
-        $insertAppDits = "INSERT INTO applicantqualifications (appQualName, appQualInstitution, appQualInstTime, jobAppId)
-                          VALUES('$certification', '$university', '$noOfYrs', ) " ;
-    } 
-
-    //unset session variable with qualifications
-    unset($_SESSION["qualifications"]); 
 
     //redirect to confirmDetails.php page where applicant will confirm their details before submitting submission
     header("Location: confirmAppDetails.php");
