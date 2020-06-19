@@ -86,9 +86,9 @@ class Header
             <!--Using flex for the header design
             Check file: employer_header_footer.css
             -->
-        <header class="site-header">
-        <a href="#"><img height="90" width="260" src="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/Images/kenyancareer_logo_transparent.png" alt="kenyan_career_logo"></a>
-       </header>
+            <header class="site-header" style="background:white">
+            <h2><b>Kenyan Careers</b> </h2>
+           </header>
        <!-- Nav tabs -->
          <ul class="nav nav-tabs" id="navId">
             <li class="nav-item">
