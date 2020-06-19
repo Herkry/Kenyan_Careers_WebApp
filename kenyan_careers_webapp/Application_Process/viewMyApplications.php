@@ -193,7 +193,7 @@ for ($i=0; $i < count($rowApplicantJobAppDetails); $i++) {
                   </div>
                   <div class="col-sm-3 col-md-3 col-lg-3 light-flatui border border-dark rounded pt-5 text-center">
                       <form action="page-5.php" method="post">
-                          <input type="hidden" name="jobAppId" value="<?php echo($rowApplicantJobAppDetails[$i])?>">
+                          <input type="hidden" name="jobAppId" value="<?php echo($rowApplicantJobAppDetails[$i]["jobAppId"])?>">
                           <input class="btn-lg btn-primary" type="submit" name="View" value="View">
                       </form>
                   </div>
