@@ -122,7 +122,7 @@ for ($i=0; $i < count($rowApplicantJobAppDetails); $i++) {
             <img src="C:/xampp/htdocs/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/Images/football.png"  alt="">
                    Kenya Careers
         </a>
-
+        
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -191,20 +191,16 @@ for ($i=0; $i < count($rowApplicantJobAppDetails); $i++) {
                       <h3><?php echo($arrayJobNames[$i]) ?></h3>
                   </div>
                   <div class="col-sm-3 col-md-3 col-lg-3 light-flatui border border-dark rounded pt-5 text-center">
-                      <form action="ISRAEL's page(the last one).php" method="post">
+                      <form action="page-5.php" method="post">
                           <input type="hidden" name="jobAppId" value="<?php echo($rowApplicantJobAppDetails[$i])?>">
                           <input class="btn-lg btn-primary" type="submit" name="View" value="View">
-
                       </form>
                   </div>
               </div>
 
         <?php 
             }
-        ?>
-
-        
-            
+        ?>            
 
     </div>
 
