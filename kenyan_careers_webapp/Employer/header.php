@@ -92,7 +92,7 @@ class Header
        <!-- Nav tabs -->
         <ul class="nav nav-tabs" id="navId">
             <li class="nav-item">
-                <a href="/Kenyan_Careers_WebApp/kenyan_careers_webapp/index.html" class="nav-link">Explore</a>
+                <a href="/Kenyan_Careers_WebApp/kenyan_careers_webapp/index.php" class="nav-link">Explore</a>
             </li>
             <li class="nav-item">
                 <a href="#tab5Id" class="nav-link">Look for a job</a>
@@ -159,7 +159,7 @@ class Header
      <!-- Nav tabs -->
       <ul class="nav nav-tabs" id="navId">
           <li class="nav-item">
-              <a href="/Kenyan_Careers_WebApp/kenyan_careers_webapp/index.html" class="nav-link">Explore</a>
+              <a href="/Kenyan_Careers_WebApp/kenyan_careers_webapp/index.php" class="nav-link">Explore</a>
           </li>
           <li class="nav-item">
               <a href="#tab5Id" class="nav-link">Look for a job</a>
