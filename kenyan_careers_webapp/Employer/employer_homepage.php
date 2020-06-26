@@ -28,14 +28,14 @@ if(!isset($_SESSION['myid']))
 <body>
 <div id="logo" class="container">
 
-  <h2 style="text-align:center;font-size:30px;"><b> <a href="/Kenyan_Careers_WebApp/kenyan_careers_webapp/index.html">KENYAN CAREERS</a></b> </h2>
+  <h2 style="text-align:center;font-size:30px;"><b> <a href="/Kenyan_Careers_WebApp/kenyan_careers_webapp/index.php">KENYAN CAREERS</a></b> </h2>
 
 </div>
 
 <div id="menu-wrapper">
 	<div id="menu" class="container">
 		<ul>
-			<li><a href="/Kenyan_Careers_WebApp/kenyan_careers_webapp/index.html">Homepage</a></li>
+			<li><a href="/Kenyan_Careers_WebApp/kenyan_careers_webapp/index.php">Homepage</a></li>
 			<li><a href="employer_profile.php">Profile</a></li>
       <li><a href="employer_vacancy_home.php">Vacancy</a></li>
 			<li><a href="#">Blog Articles</a></li>
@@ -61,7 +61,8 @@ if(!isset($_SESSION['myid']))
 			<li><a href="https://www.americasjobexchange.com/employer/employer-articles/guide-small-businesses-with-federal-contracts">Guide for small businesses</a></li>
 			<li><a href="https://www.americasjobexchange.com/employer/employer-articles/what-makes-a-good-team">What makes a great Team?</a></li>
 			<li><a href="https://www.americasjobexchange.com/employer/employer-articles/employee-appreciation">Appreciating Employees</a></li>
-		</ul>
+      <li><a href="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Employer/employer_deactivate_account.php">Deactivate Account</a></li>
+  	</ul>
 	</div>
 	<div id="box3">
 		<h2>Improve Business</h2>
@@ -71,6 +72,7 @@ if(!isset($_SESSION['myid']))
 			<li><a href="https://www.americasjobexchange.com/employer/employer-articles/veteran-hiring-a-networked-approach">Veteran Hiring</a></li>
 			<li><a href="https://www.americasjobexchange.com/employer/employer-articles/productivity-at-work">Staying Connected</a></li>
 			<li><a href="https://www.americasjobexchange.com/employer/employer-articles/social-media-policies-in-the-workplace">Manage Social Media</a></li>
+
 		</ul>
 	</div>
 </div>

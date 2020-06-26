@@ -3,8 +3,8 @@
     include_once('emp_dbconnect.php');
     require_once('footer.php');
 
-    $footr = new Footer();
-    $footr->display_plain_footer();
+    // $footr = new Footer();
+    // $footr->display_plain_footer();
 
     if(!isset($_SESSION['myid']))
     {
@@ -23,6 +23,9 @@
      <link rel="stylesheet" href="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/CSS/employer_signup.css">
    </head>
    <body>
+     <h3 style="text-align:center; margin-top:20px;">
+        <a href="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Employer/employer_homepage.php"><img src="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Assets/Images/back_button.png" height="50px" alt=""></a>
+         <b style="color:green;">Back to My Dashboard</b> </h3>
 
     <?php
     $sql = "SELECT * FROM employer_details ";
