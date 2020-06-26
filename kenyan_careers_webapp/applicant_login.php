@@ -93,7 +93,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     //header("location: phpDbHtml.php");
     //exit;
 	//echo"welcome";
-    header("Location: /Kenyan_Careers_WebApp/kenyan_careers_webapp/Application_Process/page-1.php");
+    header("Location: /Kenyan_Careers_WebApp/kenyan_careers_webapp/index.php");
     
 }
 

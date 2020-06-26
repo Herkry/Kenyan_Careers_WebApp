@@ -1,4 +1,16 @@
 <?php
+
+// session_start();
+ 
+
+// if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+//   header("location: /Kenyan_Careers_WebApp/kenyan_careers_webapp/applicant_login.php");
+//   exit;
+// }
+
+?>
+
+<?php
 include_once "sqlFunctions.php";
 
 function display(){
@@ -218,7 +230,11 @@ function display(){
                                         <p class="card-text">Category: <?php echo $job[$i]['jobCategory']; ?></p>
                                         <p class="card-text">Location: <?php echo $job[$i]['jobLocation']; ?></p>
                                         <p class="card-text">Closing date: <?php echo $job[$i]['jobClosingDate']; ?></p>
-                                        <a href="#" class="btn btn-primary">Read More</a>
+										<form action="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Application_Process/page-1.php" method="post">
+											<!--<a href="#" class="btn btn-primary">Read More</a>-->
+											<input type="submit" class="btn btn-primary" value="Read More">
+											<?php echo "<input type = 'hidden' name = 'jobId' value = '".$job[$i]['jobId']."'/>"?>
+										</form>
                                     </div>
                                 </div>
                             </div>

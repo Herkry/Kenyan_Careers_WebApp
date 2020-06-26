@@ -2,14 +2,21 @@
 
 <?php
 // Initialize the session
-session_start();
+// session_start();
  
 // Check if the user is logged in, if not then redirect him to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-  header("location: /Kenyan_Careers_WebApp/kenyan_careers_webapp/applicant_login.php");
-  exit;
-}
+// if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+//   header("location: /Kenyan_Careers_WebApp/kenyan_careers_webapp/applicant_login.php");
+//   exit;
+// }
 
+?>
+
+<?php
+
+require_once "sqlFunctions.php";
+$link = connect();
+$username = $_SESSION["username"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -80,8 +87,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <nav class="navbar navbar-fixed-top navbar-inverse">
 <div id="constant" style="background: white; height: 40px; position: relative;">
 
-  <li ><a href="/Kenyan_Careers_WebApp/kenyan_careers_webapp/applicant_logout.php" style=""><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-
 </div>
   <div class="container">
     <div class="navbar-header">
@@ -99,6 +104,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <li><a href="#">APPLY</a></li>
         <li><a href="#">LINK A</a></li>
         <li><a href="#">LINK B</a></li>
+        <li ><a href="/Kenyan_Careers_WebApp/kenyan_careers_webapp/applicant_logout.php" style=""><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+
       </ul>
     </div>
   </div>
@@ -123,23 +130,36 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         </div>
         
         <div class="col-sm-6">
-            <h2 style="color:#2E86C1;">Job Title</h2>
-            <hr style="border-top: 1px solid grey;">
-            <h2>Google Developers</h2><br>
-            <h3>Job Opportunity: Web Developers</h3>
-            <br>
-            <table id="status">
-              <tr>
-                <th>Application Status</th>
+            <?php
+                  $jobId = $_POST["jobId"];
+                  $query1 = "SELECT * FROM `jobs` WHERE jobId = '$jobId'";
+                  $result = $link->query($query1);
 
-              </tr>
-              <tr>
-                <td>Not applied yet</td>
-              </tr>
-              <tr>
-                <td>No feedback</td>
-              </tr>
-            </table>
+                  while ($row = $result->fetch_assoc()){
+
+                    
+                    
+                    
+                  echo "
+
+                  <h2 style='color:#2E86C1;'>Job Title</h2>
+                  <hr style='border-top: 1px solid grey;'>
+                  <h2>".$row['jobName']."</h2><br>
+                  <h3>Description</h3>
+                  <hr style='border-top: 1px solid grey;'>
+                
+                  <h4>".$row['jodDescr']."</h4>
+                
+                  <form method='post'>
+                  <input type = 'hidden' name = 'jobId' value = '".$row['jobId']."'/>
+                
+                  </form>	
+
+                  ";
+                  }
+            
+            ?>
+
         </div>  
              
     </div>
@@ -152,19 +172,33 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
           <tr>
             <th>What skills and certifications are required?</th>
 
+            <?php
+                  $jobId = $_POST["jobId"];
+                  $query2 = "SELECT * FROM `jobrequirements` WHERE jobId = '$jobId'";
+                  $result = $link->query($query2);
+
+                  while ($row = $result->fetch_assoc()){
+
+                    
+                  echo "
+
+                  <tr>
+                    <td>".$row['jobReqDescr']."</td>
+                  </tr>
+                  
+              
+                  <form method='post'>
+                  <input type = 'hidden' name = 'jobId' value = '".$row['jobId']."'/>
+                
+                  </form>	
+
+                  ";
+                  }
+            
+            ?>
+
           </tr>
-          <tr>
-            <td>Four years experience</td>
-          </tr>
-          <tr>
-            <td>Python certification</td>
-          </tr>
-          <tr>
-            <td>Computer science degree</td>
-          </tr>
-          <tr>
-            <td>JavaScript Skills</td>
-          </tr>
+         
         </table>
     </div>
     <div class="row">
