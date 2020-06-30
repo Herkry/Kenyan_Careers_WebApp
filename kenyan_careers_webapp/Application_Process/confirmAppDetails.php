@@ -14,6 +14,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 //1. Selecting profile details
 //Get SESSION data from ISRAEL
 $appId = 1;
+$appId = $_SESSION["id"];
 
 //Query
 $selectApplicantDetails = "SELECT * FROM applicants WHERE appId = '$appId'";
