@@ -10,24 +10,34 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 
-//getting user's name
-//Get SESSION data from ISRAEL
-$appId = 1;
-$appId = $_SESSION["id"];
+//check whether muliple applications for a single job logical error exists
+ if($_SESSION["error_multiple_singlejob_applications"] == 1){
+?>
+    <script>
+        alert("You cannot have more than one application for a single job");
+    </script>
+<?php
+    header("Location: http://localhost/Kenyan_Careers_WebApp/kenyan_careers_webapp/page-1.php");
+ }
+ else{
+     //getting user's name
+     //Get SESSION data from ISRAEL
+     $appId = 1;
+     $appId = $_SESSION["id"];
+     
+     //put jobId into SESSION 
+     $jobId = $_POST["jobId"];
+     $_SESSION["jobId"] = $jobId;
+     
+     
+     //Query
+     $selectApplicantName = "SELECT * FROM applicants WHERE appId = '$appId'";
+     $rowSelectApplicantName = getData($selectApplicantName);
+     
+     //create session for user name logged
+     $_SESSION["name_of_user"] = $rowSelectApplicantName[0]["appLname"];
+ }
 
-//put jobId into SESSION
-//create this if statemet later
-//if(isset($_POST["apply_now"])){
-    $jobId = $_POST["jobId"];
-    $_SESSION["jobId"] = $jobId;
-//} 
-
-//Query
-$selectApplicantName = "SELECT * FROM applicants WHERE appId = '$appId'";
-$rowSelectApplicantName = getData($selectApplicantName);
-
-//create session for user name logged
-$_SESSION["name_of_user"] = $rowSelectApplicantName[0]["appLname"];
 
 ?>
 
