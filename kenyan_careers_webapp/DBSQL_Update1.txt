@@ -25,7 +25,10 @@ CREATE TABLE Jobs(
     jobName VARCHAR(30),
     jodDescr TEXT,
     jobSalary DOUBLE,
-    
+    Requirements varchar(255) DEFAULT NULL,
+    jobLocation varchar(255) DEFAULT NULL,
+    jobCategory varchar(255) DEFAULT NULL,
+    jobClosingDate varchar(255) DEFAULT NULL
     empId INT,
     FOREIGN KEY(empId) REFERENCES Employers(empId)
 );
