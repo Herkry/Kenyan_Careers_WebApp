@@ -137,7 +137,7 @@ $username = $_SESSION["username"];
 
             <?php
                   $appId = $_POST["jobAppId"];
-                  $query1 = "SELECT * FROM `jobapplications` WHERE appId = '$appId'";
+                  $query1 = "SELECT * FROM `jobapplications` WHERE jobAppId = '$appId'";
                   $result = $link->query($query1);
 
                   while ($row = $result->fetch_assoc()){
