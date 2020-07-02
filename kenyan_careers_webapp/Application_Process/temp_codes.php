@@ -14,7 +14,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
  if($_SESSION["error_multiple_singlejob_applications"] == 1){
 ?>
     <script>
-        alert("You cannot have more than one application for a single job");
+        alert("You cannot have more than one application for a specific job");
     </script>
 <?php
     header("Location: http://localhost/Kenyan_Careers_WebApp/kenyan_careers_webapp/page-1.php");
