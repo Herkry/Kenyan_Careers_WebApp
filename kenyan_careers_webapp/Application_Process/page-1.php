@@ -191,23 +191,34 @@ $username = $_SESSION["username"];
                   <input type = 'hidden' name = 'jobId' value = '".$row['jobId']."'/>
                 
                   </form>	
-
                   ";
-                  }
-            
-            ?>
+                }
+
+                echo "
+
+
 
           </tr>
          
         </table>
     </div>
-    <div class="row">
+    <div class='row'>
     <br>
-    <div class="col-sm-8">
-    <a href="/Kenyan_Careers_WebApp/kenyan_careers_webapp/Application_Process/applicationDetails.php"><button type="button" class="btn btn-success">Apply Now</button></a> 
+    <div class='col-sm-8'>
+    
+    <form method='post' action='/Kenyan_Careers_WebApp/kenyan_careers_webapp/Application_Process/applicationDetails.php'>
+        <input type = 'hidden' name = 'jobId' value = '".$jobId."'/>
+        <input type='submit' class='btn btn-success' value='Apply Now'>
+
+    </form>
+    
+
     </div>
-    <div class="col-sm-4">
-    <a href="#"><button type="button" class="btn btn-warning">Skype Job</button></a>
+    <div class='col-sm-4'>
+    <a href='#'><button type='button' class='btn btn-warning'>Skype Job</button></a>
+    "
+
+?>
     </div>
     </div>
 </div>

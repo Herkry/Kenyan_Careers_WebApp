@@ -1477,6 +1477,7 @@ a:focus {
     text-decoration: none;
     color: #fd5f00;
     outline: none !important;
+    background: rgba(0, 0, 0, 0.1);
 }
 
 h2,

@@ -132,6 +132,8 @@ $username = $_SESSION["username"];
         </div>
         
         <div class="col-sm-6">
+              <h2 style='color:#2E86C1;'>Job Title</h2>
+              <hr style='border-top: 1px solid grey;'>
 
             <?php
                   $appId = $_POST["jobAppId"];
@@ -151,8 +153,7 @@ $username = $_SESSION["username"];
 
                                 echo "
 
-                                    <h2 style='color:#2E86C1;'>Job Title</h2>
-                                    <hr style='border-top: 1px solid grey;'>
+
                                     <h2>".$row2['jobName']."</h2><br>
                                     <h3>Job Application Feedback</h3>
                                     <br>
