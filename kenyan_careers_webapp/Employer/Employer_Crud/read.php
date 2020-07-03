@@ -1,5 +1,12 @@
 <?php
-    require 'database.php';
+session_start();
+include 'header.php';
+require 'database.php';
+if(!isset($_SESSION['myid']))
+{
+    header('location:/Kenyan_Careers_WebApp/kenyan_careers_webapp/Employer/employer_loginpage.php');
+}
+    
     
     $id = null;
     if ( !empty($_GET['id'])) {
@@ -11,7 +18,7 @@
     } else {
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "SELECT * FROM Vacancies where id = ?";
+        $sql = "SELECT * FROM jobs where id = ?";
         $q = $pdo->prepare($sql);
         $q->execute(array($id));
         $data = $q->fetch(PDO::FETCH_ASSOC);
@@ -35,68 +42,67 @@
                         <h3>Read a Job</h3>
                     </div>
                      
-                    <div class="form-horizontal" >
+                    
                       <div class="control-group">
-                        <label class="control-label">Category</label>
+                        <label class="control-label" style="background-color:powderblue;">JOB NAME</label>
                         <div class="controls">
                             <label class="checkbox">
-                                <?php echo $data['Category'];?>
-                            </label>
-                        </div>
-                      </div>
-                      <div class="control-group">
-                        <label class="control-label">Duration</label>
-                        <div class="controls">
-                            <label class="checkbox">
-                                <?php echo $data['Duration'];?>
-                            </label>
-                        </div>
-                      </div>
-                      <div class="control-group">
-                        <label class="control-label">Position</label>
-                        <div class="controls">
-                            <label class="checkbox">
-                                <?php echo $data['Position'];?>
-                            </label>
-                        </div>
-                      </div>
-                      <div class="control-group">
-                        <label class="control-label">Responsibility</label>
-                        <div class="controls">
-                            <label class="checkbox">
-                                <?php echo $data['Responsibilities'];?>
+                                <?php echo $data['jobName'];?>
                             </label>
                         </div>
                       </div><div class="control-group">
-                        <label class="control-label">Qualification</label>
+                        <label class="control-label" style="background-color:powderblue;">JOB DESCRIPTION</label>
                         <div class="controls">
                             <label class="checkbox">
-                                <?php echo $data['Qualifications'];?>
+                                <?php echo $data['jodDescr'];?>
                             </label>
                         </div>
                       </div><div class="control-group">
-                        <label class="control-label">Salary</label>
+                        <label class="control-label" style="background-color:powderblue;">SALARY IN Ksh</label>
                         <div class="controls">
                             <label class="checkbox">
-                                <?php echo $data['Salary'];?>
+                                <?php echo $data['jobSalary'];?>
                             </label>
                         </div>
                       </div><div class="control-group">
-                        <label class="control-label">Application_Criteria</label>
+                        <label class="control-label" style="background-color:powderblue;">JOB REQUIREMENTS</label>
                         <div class="controls">
                             <label class="checkbox">
-                                <?php echo $data['Application_Criteria'];?>
+                                <?php echo $data['Requirements'];?>
                             </label>
                         </div>
-                      </div>
+                        
+                      </div><div class="control-group">
+                        <label class="control-label" style="background-color:powderblue;">JOB CATEGORY</label>
+                        <div class="controls">
+                            <label class="checkbox">
+                                <?php echo $data['jobCategory'];?>
+                            </label>
+                        </div><div class="control-group">
+                        <label class="control-label" style="background-color:powderblue;">JOB CLOSING DATE</label>
+                        <div class="controls">
+                            <label class="checkbox">
+                                <?php echo $data['jobClosingDate'];?>
+                            </label>
+                        </div><div class="control-group">
+                        <label class="control-label" style="background-color:powderblue;">JOB LOCATION</label>
+                        <div class="controls">
+                            <label class="checkbox">
+                                <?php echo $data['jobLocation'];?>
+                            </label>
+                        </div>
+                        
                         <div class="form-actions">
                           <a class="btn" href="index.php">Back</a>
                        </div>
                      
-                      
+                      </div>
                     </div>
                 </div>
                  
     </div> <!-- /container -->
   </body>
-</html>
+</html><br><br>
+<?php
+include "footer.php";
+?>

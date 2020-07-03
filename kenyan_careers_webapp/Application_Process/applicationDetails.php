@@ -188,8 +188,20 @@ $_SESSION["name_of_user"] = $rowSelectApplicantName[0]["appLname"];
                     <li class="nav-item"><a href="#" class="nav-link">Upload CV</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Contact Us</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-                    <li class="nav-item"><a href="login.php" class="nav-link" style="color: orange;">Log In</a></li>
-                    <li class="nav-item"><a href="registration.php" class="nav-link" style="color: orange;">Sign In</a></li>
+                    <div class="navbar">
+                        <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="login-dropdown" class="nav-link" style="color: orange;">Log In</a>
+                        <div class="dropdown-menu nav-item" aria-labelledby="login-dropdown">
+                            <a href="#" class="nav-link" style="color: black">Job Seeker</a>
+                            <a href="#" class="nav-link" style="color: black">Employer</a>
+                        </div>
+                    </div>
+                    <div class="navbar">
+                        <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="signin-dropdown" class="nav-link" style="color: orange;">Sign In</a>
+                        <div class="dropdown-menu nav-item" aria-labelledby="signin-dropdown">
+                            <a href="#" class="nav-link" style="color: black">Job Seeker</a>
+                            <a href="#" class="nav-link" style="color: black">Employer</a>
+                        </div>
+                    </div>
 
                 </ul>
             </div>
