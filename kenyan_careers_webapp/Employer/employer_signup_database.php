@@ -71,7 +71,7 @@
                        echo "Message could not be sent";
                    }
                    //Verification page
-                   header('Location: employer_signup_verification.php');
+                   header('Location: employer_loginpage.php');
                 }
                 else
                 {

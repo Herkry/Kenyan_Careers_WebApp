@@ -2,11 +2,13 @@
 //This is a file that forwards all the user input to the database
 //It also sends verification code via Email Address
 //Utilises PHPMailer path: phpmailer/PHPMailerAutoload.php
+    session_start();
 
     $servername = "localhost";
     $username = "root";
     $password = "";
     $dbname = "kenyan_careers_webapp_db";
+    
 
      $conn = mysqli_connect($servername,$username,$password,$dbname) or die("Could not connect!");
 
@@ -18,14 +20,22 @@
     if (isset($_POST['submit']))
    {
       //Initialization of the values
-      $name = $_POST['name'];
+      //$name = $_POST['name'];
       $email = $_POST['email'];
       $phone = $_POST['phone'];
       $location = $_POST['location'];
       $address = $_POST['address'];
       $url = $_POST['url'];
+      //session id
+      $emp_id = $_SESSION['myid'];
+        echo $emp_id;
+        echo("<pre>");
+        print_r($_POST);
+        echo("</pre");
 
-      $sql = "UPDATE employer_details SET emp_name='$name', emp_email='$email',emp_phone='$phone',emp_location='$location',emp_address='$address',emp_url='$url' WHERE emp_id=7";
+
+
+      $sql = "UPDATE employer_details SET emp_email='$email',emp_phone='$phone',emp_location='$location',emp_address='$address',emp_url='$url' WHERE emp_id='$emp_id'";
 
         if ($conn->query($sql) === TRUE)
                 {

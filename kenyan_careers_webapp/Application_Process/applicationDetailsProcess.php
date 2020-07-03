@@ -36,7 +36,7 @@
     
         //Inserting application details to database
         $insertAppDits = "INSERT INTO jobapplications (jobAppStatus, jobAppCV, appId, jobId, jobAppExpectations, jobAppStrengths, jobAppWeaknesses)
-                          VALUES('$jobAppStatus','$target_dir','$appId', '$jobId', '$expectations', '$strengths', '$weaknesses') " ;
+                          VALUES('$jobAppStatus','$target_file','$appId', '$jobId', '$expectations', '$strengths', '$weaknesses') " ;
         setData($insertAppDits);
         //Get jobapplications id from DB for future use
         $selectApplicantJobAppId = "SELECT jobAppId FROM jobapplications WHERE appId = '$appId' AND jobId = '$jobId' AND jobAppStatus = '$jobAppStatus'";

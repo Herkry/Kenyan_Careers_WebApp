@@ -66,11 +66,12 @@
                         
          // insert data
          if ($valid) {
+             $empId = $_SESSION['myid'];
              $pdo = Database::connect();
              $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-             $sql = "INSERT INTO jobs ( jobName , jodDescr , jobSalary, Requirements, jobLocation, jobCategory, jobClosingDate)  values( ?, ?, ?, ?,? ,? , ?)";		
+             $sql = "INSERT INTO jobs ( jobName , jodDescr , jobSalary, Requirements, jobLocation, jobCategory, jobClosingDate, empId)  values( ?, ?, ?, ?,? ,? , ?, ?)";		
              $q = $pdo->prepare($sql);
-             $q->execute(array($Jobname, $JobDescription, $Salary, $Requirement, $jobLocation, $jobCategory, $jobClosingDate));
+             $q->execute(array($Jobname, $JobDescription, $Salary, $Requirement, $jobLocation, $jobCategory, $jobClosingDate, $empId));
              Database::disconnect();
              header("Location: index.php");
          }

@@ -67,12 +67,13 @@
         }
          // insert data
          if ($valid) {
+             $empId = $_SESSION['myid'];
              $pdo = Database::connect();
              $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
              
              $sql = "UPDATE jobs SET jobName=?, jodDescr=?, jobSalary=? , Requirements=?, jobLocation=?, jobCategory=?, jobClosingDate=? WHERE id=?";	
              $q = $pdo->prepare($sql);
-             $q->execute(array($Jobname, $JobDescription, $Salary, $Requirement, $jobLocation, $jobCategory, $jobClosingDate));
+             $q->execute(array($Jobname, $JobDescription, $Salary, $Requirement, $jobLocation, $jobCategory, $jobClosingDate, $empId));
              Database::disconnect();
              header("Location: index.php");
          }
@@ -80,7 +81,7 @@
               else {
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "SELECT * FROM jobs where id = ?";
+        $sql = "SELECT * FROM jobs where jobId = ?";
         $q = $pdo->prepare($sql);
         $q->execute(array($id));
         $data = $q->fetch(PDO::FETCH_ASSOC);
@@ -106,11 +107,11 @@
      
                 <div class="span10 offset1">
                     <div class="row">
-                        <h3>Create Job</h3>
+                        <h3>Update Job</h3>
         
                     </div>
              
-                    <form class="form-horizontal" action="create.php" method="post">
+                    <form class="form-horizontal" action="updateProcess.php" method="post">
                       <div class="control-group <?php echo !empty($CategoryError)?'error':'';?>">
                         
                       <div class="control-group <?php echo !empty($JobnameError)?'error':'';?>">
@@ -179,6 +180,9 @@
                             <?php if (!empty($jobClosingDateError)): ?>
                                 <span class="help-inline"><?php echo $jobClosingDateError;?></span>
                             <?php endif;?>
+
+                            <input name="jobId" type="hidden"  value="<?php echo ($id);?>">
+
                         </div>
                       </div>
                       
