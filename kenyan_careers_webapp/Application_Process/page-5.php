@@ -153,7 +153,7 @@ $username = $_SESSION["username"];
 
 
 <!-- Container (News Section) -->
-<div id="news" class="container-fluid bg-grey">
+<div id="news" class="container bg-grey">
     <div class="row">
         <div class="col-sm-6">
             <div class="thumbnail bg-grey">

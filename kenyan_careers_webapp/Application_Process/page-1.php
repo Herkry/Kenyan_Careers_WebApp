@@ -153,7 +153,7 @@ $link = connect();
 
 
 <!-- Container (News Section) -->
-<div id="news" class="container-fluid bg-grey">
+<div id="news" class="container bg-grey">
     <div class="row">
         <div class="col-sm-6">
             <div class="thumbnail bg-grey">
@@ -243,7 +243,7 @@ $link = connect();
     
     <form method='post' action='/Kenyan_Careers_WebApp/kenyan_careers_webapp/Application_Process/applicationDetails.php'>
         <input type = 'hidden' name = 'jobId' value = '".$jobId."'/>
-        <input type='submit' class='btn btn-success' value='Apply Now'>
+        <input type='submit' class='btn btn-primary' value='Apply Now'>
 
     </form>
     
