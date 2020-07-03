@@ -1,7 +1,7 @@
 <?php
 
 // session_start();
- 
+
 
 // if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 //   header("location: /Kenyan_Careers_WebApp/kenyan_careers_webapp/applicant_login.php");
@@ -178,7 +178,7 @@ function display(){
                                             <input class="dropdown-item" type="submit" name="submit" value="<?php echo $category[$i]['jobCategory'];?>">
                                             <?php
                                         endfor;
-                                    endif;        
+                                    endif;
                                 ?>
                                     </form>
                                 </div>
@@ -201,7 +201,7 @@ function display(){
                                             <input class="dropdown-item" type="submit" name="submit" value="<?php echo $location[$i]['jobLocation'];?>">
                                             <?php
                                         endfor;
-                                    endif;        
+                                    endif;
                                 ?>
                                     </form>
                                 </div>

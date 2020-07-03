@@ -55,10 +55,10 @@
             $fdf_file=time().'.fdf';
 
             // the directory to write the result in
-            $fdf_dir=dirname('C:/xampp/htdocs/HCI/PHP/MyCV/KenyanCareerPDFTemplate.pdf');
+            $fdf_dir=dirname('kenyan_careers_webapp/CV_Builder/MyCV/KenyanCareerPDFTemplate.pdf');
 
             // need to know what file the data will go into
-            $pdf_doc='C:/xampp/htdocs/HCI/PHP/KenyanCareerPDFTemplate.pdf';
+            $pdf_doc='kenyan_careers_webapp/CV_Builder/KenyanCareerPDFTemplate.pdf';
 
             $fdf_data=createFDF($pdf_doc,$data);
 
