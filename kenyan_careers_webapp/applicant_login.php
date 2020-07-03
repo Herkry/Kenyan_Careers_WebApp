@@ -197,6 +197,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                     <div class="collapse navbar-collapse" id="ftco-nav">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item active"><a href="index.php" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="jobs.php" class="nav-link">Jobs</a></li>
                             <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
                             <li class="nav-item"><a href="#" class="nav-link">Upload CV</a></li>
                             <li class="nav-item"><a href="#" class="nav-link">Contact Us</a></li>

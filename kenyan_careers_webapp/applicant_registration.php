@@ -352,38 +352,39 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   </div>
 </nav> -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
-                <div class="container">
-                    <a class="navbar-brand" href="index.php">Kenyan Career<span>.</span></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
+    <div class="container">
+        <a class="navbar-brand" href="index.php">Kenyan Career<span>.</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+<span class="oi oi-menu"></span> Menu
+</button>
 
-                    <div class="collapse navbar-collapse" id="ftco-nav">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item active"><a href="index.php" class="nav-link">Home</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">Upload CV</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">Contact Us</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-                            <div class="navbar">
-                                <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="login-dropdown" class="nav-link" style="color: orange;">Log In</a>
-                                <div class="dropdown-menu nav-item" aria-labelledby="login-dropdown">
-                                    <a href="#" class="nav-link" style="color: black">Job Seeker</a>
-                                    <a href="#" class="nav-link" style="color: black">Employer</a>
-                                </div>
-                            </div>
-                            <div class="navbar">
-                                <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="signin-dropdown" class="nav-link" style="color: orange;">Sign In</a>
-                                <div class="dropdown-menu nav-item" aria-labelledby="signin-dropdown">
-                                    <a href="#" class="nav-link" style="color: black">Job Seeker</a>
-                                    <a href="#" class="nav-link" style="color: black">Employer</a>
-                                </div>
-                            </div>
-
-                        </ul>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active"><a href="index.php" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="jobs.php" class="nav-link">Jobs</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Upload CV</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contact Us</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+                <div class="navbar">
+                    <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="login-dropdown" class="nav-link" style="color: orange;">Log In</a>
+                    <div class="dropdown-menu nav-item" aria-labelledby="login-dropdown">
+                        <a href="#" class="nav-link" style="color: black">Job Seeker</a>
+                        <a href="#" class="nav-link" style="color: black">Employer</a>
                     </div>
                 </div>
-            </nav>
+                <div class="navbar">
+                    <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="signin-dropdown" class="nav-link" style="color: orange;">Sign In</a>
+                    <div class="dropdown-menu nav-item" aria-labelledby="signin-dropdown">
+                        <a href="#" class="nav-link" style="color: black">Job Seeker</a>
+                        <a href="#" class="nav-link" style="color: black">Employer</a>
+                    </div>
+                </div>
+
+            </ul>
+        </div>
+    </div>
+</nav>
 
 
 <div class="jumbotron text-center">

@@ -169,19 +169,19 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     <li class="nav-item"><a href="#" class="nav-link">Contact Us</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
                     <div class="navbar">
-                        <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="login-dropdown" class="nav-link" style="color: orange;">Log In</a>
-                        <div class="dropdown-menu nav-item" aria-labelledby="login-dropdown">
-                            <a href="#" class="nav-link" style="color: black">Job Seeker</a>
-                            <a href="#" class="nav-link" style="color: black">Employer</a>
-                        </div>
-                    </div>
-                    <div class="navbar">
-                        <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="signin-dropdown" class="nav-link" style="color: orange;">Sign In</a>
-                        <div class="dropdown-menu nav-item" aria-labelledby="signin-dropdown">
-                            <a href="#" class="nav-link" style="color: black">Job Seeker</a>
-                            <a href="#" class="nav-link" style="color: black">Employer</a>
-                        </div>
-                    </div>
+                                <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="login-dropdown" class="nav-link" style="color: orange;">Log In</a>
+                                <div class="dropdown-menu nav-item" aria-labelledby="login-dropdown">
+                                    <a href="http://localhost/Kenyan_Careers_WebApp/kenyan_careers_webapp/applicant_login.php" class="nav-link" style="color: black">Job Seeker</a>
+                                    <a href="http://localhost/Kenyan_Careers_WebApp/kenyan_careers_webapp/Employer/employer_loginpage.php" class="nav-link" style="color: black">Employer</a>
+                                </div>
+                            </div>
+                            <div class="navbar">
+                                <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="signin-dropdown" class="nav-link" style="color: orange;">Sign In</a>
+                                <div class="dropdown-menu nav-item" aria-labelledby="signin-dropdown">
+                                    <a href="http://localhost/Kenyan_Careers_WebApp/kenyan_careers_webapp/applicant_registration.php" class="nav-link" style="color: black">Job Seeker</a>
+                                    <a href="http://localhost/Kenyan_Careers_WebApp/kenyan_careers_webapp/Employer/employer_signup.php" class="nav-link" style="color: black">Employer</a>
+                                </div>
+                            </div>
 
                 </ul>
             </div>

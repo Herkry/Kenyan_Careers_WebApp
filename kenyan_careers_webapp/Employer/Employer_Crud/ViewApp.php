@@ -1,11 +1,39 @@
 <?php
  session_start();
  include 'header.php';
+ include 'sqlFunctions.php';
  
  if(!isset($_SESSION['myid']))
  {
      header('location:/Kenyan_Careers_WebApp/kenyan_careers_webapp/Employer/employer_loginpage.php');
  }
+
+ //select from db where job ids are equal to our job ids
+ //get session id
+ $empId = $_SESSION['myid'];
+
+ $selectEmployerJobIds = "SELECT jobId FROM jobs WHERE empId = '$empId'";
+ $rowSelectEmployerJobIds = getData($selectEmployerJobIds);
+
+ //then select all the data from the jobApplications table where the data is related to our job ids
+ //declare array to hold the required data
+ $specificEmployerJobApplicationData = array();
+ $count = 0;
+
+ for ($i=0; $i < count($rowSelectEmployerJobIds); $i++) {
+    $applicantJobId = $rowSelectEmployerJobIds[$i]['jobId']; 
+
+    //select details of applicants whi have aplied to our jobs
+    $selectApplicantsJobAppDetails = "SELECT * FROM jobapplications WHERE jobId = '$applicantJobId'";
+    $rowSelectApplicantsJobAppDetails = getData($selectApplicantsJobAppDetails);
+
+    for ($j=0; $j < count($rowSelectApplicantsJobAppDetails); $j++) { 
+        $specificEmployerJobApplicationData[$count] = $rowSelectApplicantsJobAppDetails[$j];
+        $count++;
+    }
+
+ }
+
 
 ?>  
 <head>
@@ -27,18 +55,16 @@
                 
                 <table class="table table-striped table-bordered">
                   <thead>
-                    <tr>
-                    
-                    
-                    
-                 	
-                      <th>   Status</th>
-                      <th> Applicant  </th>
-                      <th> CV  </th>
-                    
+                    <tr>                 	
+                      <th> Application ID</th>
+                      <th> Application Status  </th>
+                      <th> Application CV Path  </th>
+                      <th>   </th>
+                      <th> Expectations  </th>
+                      <th> Strengths  </th>
+                      <th> Weaknesses  </th>
+                      <th> Decide  </th>
                       
-                     
-                                            <th>Action</th>
                     </tr>
                   </thead>  
                   <tbody>
@@ -49,14 +75,18 @@
                    $pdo = Database::connect();
                    $sql = 'SELECT * FROM JobApplications ORDER BY jobAppId DESC';
                    
-                   foreach ($pdo->query($sql) as $row) {
-                          $target=$row['jobAppId'];
+                   for ($k = 0; $k < count($specificEmployerJobApplicationData); $k++) {
+                          $target=$specificEmployerJobApplicationData[$k]['jobAppId'];
                           $GLOBALS['targetguy']=$target;
                             echo '<tr>';
                             
-                             echo '<td>'. $row['jobAppStatus'] . '</td>';
-                              echo '<td>'. $row['jobAppCV'] . '</td>';
-                              echo '<td> <a href="#"><img src="./assets/images/downloadicon.png" alt="CE" height="50" width="50"></a></td>';
+                             echo '<td>'. $specificEmployerJobApplicationData[$k]['jobAppId'] . '</td>';
+                             echo '<td>'. $specificEmployerJobApplicationData[$k]['jobAppStatus'] . '</td>';
+                             echo '<td>'. $specificEmployerJobApplicationData[$k]['jobAppCV'] . '</td>';
+                             echo '<td> <a href="'. $specificEmployerJobApplicationData[$k]['jobAppCV'] .'"><img src="./assets/images/downloadicon.png" alt="CE" height="50" width="50"></a></td>';
+                             echo '<td>'. $specificEmployerJobApplicationData[$k]['jobAppExpectations'] . '</td>';
+                             echo '<td>'. $specificEmployerJobApplicationData[$k]['jobAppStrengths'] . '</td>';
+                             echo '<td>'. $specificEmployerJobApplicationData[$k]['jobAppStrengths'] . '</td>';
                                
                             
                              
@@ -67,15 +97,18 @@
                             
                                 //echo '<a class="btn btn-success" href="viewAccepted.php?id='.$row['jobAppId'].'">Approve</a>';
                                 echo ' 
-                                <form action="ViewApp.php" method="post">
-                                 <button class="btn btn-success" name = "submit" type="submit">Approve</button> 
+                                <form action="ViewAppProcess.php" method="post">
+                                    <input type="hidden" name="jobAppId" value="' .$specificEmployerJobApplicationData[$k]['jobAppId'] .'">
+                                    <button class="btn btn-success" name = "submit" type="submit">Approve</button> 
+
                                  </form>
                                  ';
                                 echo '<br> ';
                                 //echo '<a class="btn btn-danger" href="Reject.php?id='.$row['jobAppId'].'">Reject</a>';
                                 echo'
-                                <form action="ViewApp.php" method="post">
-                                <button class="btn btn-danger" name="reject" type="submit">Reject</button> 
+                                <form action="ViewAppProcess.php" method="post">
+                                <input type="hidden" name="jobAppId" value="' .$specificEmployerJobApplicationData[$k]['jobAppId'] .'">
+                                    <button class="btn btn-danger" name="reject" type="submit">Reject</button> 
                                 </form>
                                 ';
                             echo '</tr>';
@@ -94,53 +127,5 @@
 
 </html><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "kenyan_careers_webapp_db";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error)
-{
-    die("Connection failed: " . $conn->connect_error);
-}
-if(isset($_POST['submit']))
-{
-  $theid = $GLOBALS['targetguy'];
-  $sql = "UPDATE JobApplications SET jobAppStatus = 'Accepted' WHERE jobAppId = '$theid'";
-
-  if ($conn->query($sql) === TRUE)
-  {
-      echo "<script>
-        alert('One application has been accepted!');
-      </script>";
-
-      header('Location:ViewApp.php');
-
-  } else
-  {
-      echo "Error updating record: " . $conn->error;
-  }
-}
-if(isset($_POST['reject']))
-{
-  $theid = $GLOBALS['targetguy'];
-  $sql = "UPDATE JobApplications SET jobAppStatus = 'Rejected' WHERE jobAppId = '$theid'";
-
-  if ($conn->query($sql) === TRUE)
-  {
-      echo "<script>
-        alert('One application has been rejected!');
-      </script>";
-
-      header('Location:ViewApp.php');
-
-  } else
-  {
-      echo "Error updating record: " . $conn->error;
-  }
-}  
-$conn->close();
+ 
 ?>

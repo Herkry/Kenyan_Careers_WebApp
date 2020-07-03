@@ -39,7 +39,7 @@ session_start();
 
          <div class="container">
              <div id="header">
-                 <h2 style = "color: blue; font-weight: bold"> <?php echo $row['emp_name']; ?>'s Profile</h2>
+                 <h2 style = "color: blue; font-weight: bold">Profile</h2>
              </div>
 
         <!--Form definition for user input-->
@@ -73,7 +73,7 @@ session_start();
 
                 <!-- </div> -->
                  <div class="col-md-6">
-                    <div class="form-group"
+                    <div class="form-group">
 
                       <input type="text" name="name" value="<?php echo $row['emp_name']; ?>" id="nameoforg" required class="form-control" placeholder="Input Name" aria-describedby="helpId">
                       <!-- <small id="helpId" class="text-muted">Help text</small> --><br>

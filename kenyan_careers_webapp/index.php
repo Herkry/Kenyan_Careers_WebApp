@@ -32,7 +32,7 @@ function display(){
         $query = "SELECT * FROM jobs WHERE jobLocation LIKE '%$location%'";
         return getData($query);
     } else {
-        $query = "SELECT * FROM jobs";
+        $query = "SELECT * FROM jobs LIMIT 6";
         return getData($query);
     }
 }
@@ -78,6 +78,7 @@ function display(){
                     <div class="collapse navbar-collapse" id="ftco-nav">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item active"><a href="index.php" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="jobs.php" class="nav-link">Jobs</a></li>
                             <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
                             <li class="nav-item"><a href="#" class="nav-link">Upload CV</a></li>
                             <li class="nav-item"><a href="#" class="nav-link">Contact Us</a></li>
@@ -266,7 +267,7 @@ function display(){
                                 <?php
                     endif;
                 ?>
-                                    <a href="#" class="btn btn-primary" style="margin-left: 70vw;">View More Jobs</a>
+                                <a href="jobs.php" class="btn btn-primary" style="margin-left: 70vw;">View More Jobs</a>
                     </div>
                 </div>
             </section>

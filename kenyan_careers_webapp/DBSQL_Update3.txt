@@ -2,7 +2,7 @@
 //DROP employer table and create employer_details as shown below
 1)
 CREATE TABLE `employer_details ` (
-  `emp_id` int(11) NOT NULL,
+  `emp_id` int(11) NOT NULL ,
   `emp_logo` blob NOT NULL,
   `emp_category` varchar(30) NOT NULL,
   `emp_name` varchar(30) NOT NULL,

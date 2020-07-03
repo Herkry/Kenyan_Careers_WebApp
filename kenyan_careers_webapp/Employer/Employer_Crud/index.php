@@ -46,9 +46,9 @@
                   <?php
                    include 'database.php';
                   
-                  
+                   $emp_id = $_SESSION['myid'];
                    $pdo = Database::connect();
-                   $sql = 'SELECT * FROM jobs ORDER BY id DESC';
+                   $sql = "SELECT * FROM jobs WHERE empId = '$emp_id' ORDER BY jobId DESC";
                    
                    foreach ($pdo->query($sql) as $row) {
                             echo '<tr>';
@@ -64,11 +64,11 @@
                              
                                                    
                             echo '<td width=250>';
-                                echo '<a class="btn" href="read.php?id='.$row['id'].'">Read</a>';
+                                echo '<a class="btn" href="read.php?id='.$row['jobId'].'">Read</a>';
                                 echo ' ';
-                                echo '<a class="btn btn-success" href="update.php?id='.$row['id'].'">Update</a>';
+                                echo '<a class="btn btn-success" href="update.php?id='.$row['jobId'].'">Update</a>';
                                 echo ' ';
-                                echo '<a class="btn btn-danger" href="delete.php?id='.$row['id'].'">Delete</a>';
+                                echo '<a class="btn btn-danger" href="delete.php?id='.$row['jobId'].'">Delete</a>';
                             echo '</tr>';
                    }
                    Database::disconnect();
